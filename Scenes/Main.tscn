@@ -6,11 +6,8 @@
 [ext_resource path="res://Scenes/pits.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Main.gd" type="Script" id=5]
 
-[node name="Main" type="Node2D"]
+[node name="BaseLevel" type="Node2D" groups=["base_level"]]
 script = ExtResource( 5 )
-
-[node name="pin" parent="." instance=ExtResource( 2 )]
-position = Vector2( 383, 196 )
 
 [node name="ball" parent="." instance=ExtResource( 1 )]
 
@@ -21,3 +18,11 @@ modulate = Color( 0, 0, 0, 0.537255 )
 position = Vector2( -458, 222 )
 rotation = -0.533962
 scale = Vector2( 12.4068, 16.4594 )
+
+[node name="pins" type="Node2D" parent="."]
+
+[node name="pin" parent="pins" instance=ExtResource( 2 )]
+position = Vector2( 383, 196 )
+
+[node name="pin2" parent="pins" instance=ExtResource( 2 )]
+position = Vector2( 469, -159 )
