@@ -8,6 +8,8 @@ func _ready():
 
 func on_area_entered(area2d):
 	$AnimatedSprite.play("knocked")
+	$AnimationPlayer.play("knocked")
+	disable_pickup()
 	var baseLevel = get_tree().get_nodes_in_group("base_level")[0]
 	baseLevel.pin_collected()
 
