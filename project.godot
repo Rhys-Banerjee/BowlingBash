@@ -48,6 +48,11 @@ down={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_5="PLATFORM"
+2d_physics/layer_6="DEATH_PIT"
+
 [physics]
 
 common/enable_pause_aware_picking=true

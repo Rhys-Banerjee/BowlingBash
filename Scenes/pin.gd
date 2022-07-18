@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Node2D
 
 
 
@@ -15,6 +15,8 @@ func on_area_entered(area2d):
 
 func disable_pickup():
 	$hitbox/CollisionShape2D.disabled = true
+	$hitbox.set_collision_mask_bit(1,false)
+	$hitbox.set_collision_layer_bit(1,false)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

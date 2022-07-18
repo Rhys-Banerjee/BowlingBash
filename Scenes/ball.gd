@@ -1,21 +1,25 @@
 extends KinematicBody2D
 
+signal died
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 const MAX_SPEED = 1200
 const ACCELERATION = 800
 const FRICTION = 50
 
+onready var isOnPlatform = true
+onready var isDead = false
 var localScore = 0
 var visited = []
 signal increase_Player_score
 
 var velocity = Vector2.ZERO
 
-func _has_collided():
-	#figure out if we've already collided with an object
+func _ready():
+	$platformHitbox.connect("area_entered", self, "on_pit_area_entered")
+
+
+func on_pit_area_entered(area2d):
+	#print(get_tree().get_nodes_in_group("platforms"))
 	pass
 
 func _physics_process(delta):
@@ -30,3 +34,5 @@ func _physics_process(delta):
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	velocity = move_and_slide(velocity)
+		#if collision.collider.is_in_group("platforms"):
+		#	print("")
