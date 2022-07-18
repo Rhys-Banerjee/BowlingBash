@@ -36,4 +36,6 @@ func pin_collected():
 
 func pin_total_changed(newTotal):
 	totalPins = newTotal
+	print(pinsLeft)
 	emit_signal("pin_total_changed", totalPins, collectedPins)
+	

@@ -3,7 +3,7 @@
 [ext_resource path="res://Scenes/ball.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/pin.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/pits.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/death.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Main.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/platform.tscn" type="PackedScene" id=6]
 
@@ -13,92 +13,47 @@ script = ExtResource( 5 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 3 )]
 
-[node name="pits" parent="." instance=ExtResource( 4 )]
-modulate = Color( 0, 0, 0, 0.537255 )
-position = Vector2( -499.967, 357.163 )
-rotation = -0.533962
-scale = Vector2( 12.4068, 16.4594 )
+[node name="hazards" type="Node2D" parent="."]
+scale = Vector2( 1, 1 )
+
+[node name="death" parent="hazards" instance=ExtResource( 4 )]
+position = Vector2( 121.578, 501.48 )
+scale = Vector2( 3.35618, 4.0773 )
+
+[node name="death2" parent="hazards" instance=ExtResource( 4 )]
+position = Vector2( -212.009, 137.038 )
+scale = Vector2( -5.13293, 1.10982 )
+
+[node name="death3" parent="hazards" instance=ExtResource( 4 )]
+position = Vector2( -310.477, 471.69 )
+scale = Vector2( -5.13293, 1.10982 )
+
+[node name="death4" parent="hazards" instance=ExtResource( 4 )]
+position = Vector2( -312.487, -199.599 )
+scale = Vector2( -5.13293, 1.10982 )
+
+[node name="death5" parent="hazards" instance=ExtResource( 4 )]
+position = Vector2( -16.0765, 556.097 )
+rotation = 3.14159
+scale = Vector2( 17.227, -4.52507 )
 
 [node name="platforms" type="Node2D" parent="." groups=["platforms"]]
 scale = Vector2( 1, 1 )
 
 [node name="platform" parent="platforms" instance=ExtResource( 6 )]
 position = Vector2( 0, 2.97909 )
-scale = Vector2( 1, 1 )
+scale = Vector2( 0.683918, 5.42987 )
 
 [node name="platform2" parent="platforms" instance=ExtResource( 6 )]
-position = Vector2( 19.0908, 79.4425 )
-scale = Vector2( 1, 1 )
+position = Vector2( 449.137, -162.857 )
+scale = Vector2( 5.90333, 1.59582 )
 
 [node name="platform3" parent="platforms" instance=ExtResource( 6 )]
-position = Vector2( 59.282, 149.948 )
-scale = Vector2( 1, 1 )
-
-[node name="platform4" parent="platforms" instance=ExtResource( 6 )]
-position = Vector2( 103.492, 188.676 )
-scale = Vector2( 1, 1 )
-
-[node name="platform5" parent="platforms" instance=ExtResource( 6 )]
-position = Vector2( 150.717, 240.313 )
-scale = Vector2( 1, 1 )
-
-[node name="platform6" parent="platforms" instance=ExtResource( 6 )]
-position = Vector2( 247.176, 196.62 )
-scale = Vector2( 1, 1 )
-
-[node name="platform7" parent="platforms" instance=ExtResource( 6 )]
-position = Vector2( 287.367, 260.174 )
-scale = Vector2( 1, 1 )
-
-[node name="platform8" parent="platforms" instance=ExtResource( 6 )]
-position = Vector2( 354.688, -113.205 )
-scale = Vector2( 1, 1 )
-
-[node name="platform9" parent="platforms" instance=ExtResource( 6 )]
-position = Vector2( 451.146, -156.899 )
-scale = Vector2( 1, 1 )
-
-[node name="platform10" parent="platforms" instance=ExtResource( 6 )]
-position = Vector2( 491.338, -93.3449 )
-scale = Vector2( 1, 1 )
-
-[node name="platform11" parent="platforms" instance=ExtResource( 6 )]
-position = Vector2( 91.435, -54.6167 )
-scale = Vector2( 1, 1 )
-
-[node name="platform12" parent="platforms" instance=ExtResource( 6 )]
-position = Vector2( 131.626, 8.93729 )
-scale = Vector2( 1, 1 )
-
-[node name="platform13" parent="platforms" instance=ExtResource( 6 )]
-position = Vector2( 196.937, -66.5331 )
-scale = Vector2( 1, 1 )
-
-[node name="platform14" parent="platforms" instance=ExtResource( 6 )]
-position = Vector2( 237.128, -2.97908 )
-scale = Vector2( 1, 1 )
-
-[node name="platform15" parent="platforms" instance=ExtResource( 6 )]
-position = Vector2( 294.401, -86.3937 )
-scale = Vector2( 1, 1 )
-
-[node name="platform16" parent="platforms" instance=ExtResource( 6 )]
-position = Vector2( 365.74, -19.8606 )
-scale = Vector2( 1, 1 )
-
-[node name="platform17" parent="platforms" instance=ExtResource( 6 )]
-position = Vector2( 431.051, -55.6097 )
-scale = Vector2( 1, 1 )
-
-[node name="platform18" parent="platforms" instance=ExtResource( 6 )]
-position = Vector2( 382.821, 196.62 )
-scale = Vector2( 1, 1 )
-
-[node name="platform19" parent="platforms" instance=ExtResource( 6 )]
-position = Vector2( 425.022, 257.195 )
-scale = Vector2( 1, 1 )
+position = Vector2( 440.094, 170.801 )
+scale = Vector2( 5.62199, 1.31777 )
 
 [node name="pins" type="Node2D" parent="."]
+scale = Vector2( 1, 1 )
 
 [node name="pin" parent="pins" instance=ExtResource( 2 )]
 position = Vector2( 383, 196 )
