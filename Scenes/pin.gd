@@ -7,6 +7,7 @@ func _ready():
 	$hitbox.connect("area_entered", self, "on_area_entered")
 
 func on_area_entered(area2d):
+	print("pin hit")
 	$AnimatedSprite.play("knocked")
 	$AnimationPlayer.play("knocked")
 	disable_pickup()

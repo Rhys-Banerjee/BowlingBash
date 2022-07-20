@@ -19,6 +19,7 @@ func _ready():
 
 
 func on_pit_area_entered(area2d):
+	print("hit")
 	emit_signal("died")
 
 func _physics_process(delta):

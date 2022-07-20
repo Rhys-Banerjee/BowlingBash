@@ -10,9 +10,10 @@ radius = 100.286
 radius = 24.2135
 
 [sub_resource type="CapsuleShape2D" id=2]
+height = 218.187
 
 [sub_resource type="CircleShape2D" id=4]
-radius = 35.5681
+radius = 10.1941
 
 [node name="ball" type="KinematicBody2D" groups=["player"]]
 scale = Vector2( 0.309266, 0.319077 )
