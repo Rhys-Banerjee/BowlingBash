@@ -15,13 +15,11 @@ signal increase_Player_score
 var velocity = Vector2.ZERO
 
 func _ready():
-	$deathBox.connect("area_entered", self, "on_pit_area_entered")
+	$platformHitbox.connect("area_exited", self, "on_area_exited")
 
-
-func on_pit_area_entered(area2d):
-	print("hit")
+func on_area_exited(area2d):
+	print("hey")
 	emit_signal("died")
-
 func _physics_process(delta):
 	var input_vector = Vector2.ZERO
 	input_vector.x = Input.get_action_strength("right") - Input.get_action_strength("left")
