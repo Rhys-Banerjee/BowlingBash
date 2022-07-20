@@ -20,6 +20,7 @@ scale = Vector2( 0.309266, 0.319077 )
 script = ExtResource( 2 )
 
 [node name="pinHitbox" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 collision_mask = 2
 
@@ -27,6 +28,7 @@ collision_mask = 2
 shape = SubResource( 1 )
 
 [node name="platformHitbox" type="Area2D" parent="."]
+scale = Vector2( 1.12274, 1.12274 )
 collision_layer = 16
 collision_mask = 16
 
@@ -42,8 +44,10 @@ visible = false
 shape = SubResource( 2 )
 
 [node name="deathBox" type="Area2D" parent="."]
+visible = false
 collision_layer = 32
 collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="deathBox"]
+visible = false
 shape = SubResource( 4 )
