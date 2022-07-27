@@ -10,7 +10,10 @@ func on_area_entered(area2d):
 	print("pin hit")
 	$AnimatedSprite.play("knocked")
 	$AnimationPlayer.play("knocked")
-	disable_pickup()
+	#https://godotengine.org/qa/75945/how-to-rotate-a-sprite-to-an-angle-linearly-not-lerping
+	#var target_angle = get_global_mouse_position().angle_to_point(position) + offset_angle
+	#$AnimatedSprite.rotate(2)
+	#disable_pickup()
 	var baseLevel = get_tree().get_nodes_in_group("base_level")[0]
 	baseLevel.pin_collected()
 
