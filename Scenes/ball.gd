@@ -18,8 +18,11 @@ func _ready():
 	$platformHitbox.connect("area_exited", self, "on_area_exited")
 
 func on_area_exited(area2d):
-	print("hey")
 	emit_signal("died")
+
+func get_position():
+	return position
+	
 func _physics_process(delta):
 	var input_vector = Vector2.ZERO
 	input_vector.x = Input.get_action_strength("right") - Input.get_action_strength("left")

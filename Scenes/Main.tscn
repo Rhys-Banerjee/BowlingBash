@@ -603,3 +603,4 @@ position = Vector2( 3111.81, -80.4353 )
 position = Vector2( 3106.78, 279.041 )
 
 [node name="ball" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2456.69, 13.9024 )

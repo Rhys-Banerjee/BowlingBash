@@ -7,11 +7,16 @@ func _ready():
 	$hitbox.connect("area_entered", self, "on_area_entered")
 
 func on_area_entered(area2d):
-	print("pin hit")
 	$AnimatedSprite.play("knocked")
 	$AnimationPlayer.play("knocked")
+	#var target = get_node("./ball").position.angle_to_point(position)
+	var pos = get_tree().get_nodes_in_group("player")[0].position
+	var target = pos.angle_to_point(position)
+	print(target)
+	$AnimatedSprite.rotate(target)
+	#$AnimatedSprite.rotate(target)
 	#https://godotengine.org/qa/75945/how-to-rotate-a-sprite-to-an-angle-linearly-not-lerping
-	#var target_angle = get_global_mouse_position().angle_to_point(position) + offset_angle
+	
 	#$AnimatedSprite.rotate(2)
 	#disable_pickup()
 	var baseLevel = get_tree().get_nodes_in_group("base_level")[0]
