@@ -1,12 +1,15 @@
 extends Node2D
 
 signal pin_total_changed
+signal coin_total_changed #delete later
 
 var playerScene = preload("res://scenes/ball.tscn")
 var spawnPosition = Vector2.ZERO
 var currentPlayerNode = null
 var totalPins = 0
 var collectedPins = 0
+var totalCoins = 0 #delete later
+var collectedCoins = 0 #delete later
 onready var pinsLeft = len(get_tree().get_nodes_in_group("pin"))
 
 
@@ -14,7 +17,7 @@ func _ready():
 	 # Replace with function body.
 	spawnPosition = $ball.global_position
 	register_player($ball)
-	print(pinsLeft)
+	#print("STARTING PINS: " + pinsLeft)
 
 func register_player(player):
 	currentPlayerNode = player
@@ -32,10 +35,21 @@ func on_player_died():
 
 func pin_collected():
 	collectedPins += 1
+	pinsLeft -= 1
 	emit_signal("pin_total_changed", totalPins, collectedPins)
+	print(pinsLeft)
 
 func pin_total_changed(newTotal):
 	totalPins = newTotal
 	print(pinsLeft)
 	emit_signal("pin_total_changed", totalPins, collectedPins)
 	
+func coin_collected():
+	#delete later
+	collectedCoins += 1
+	emit_signal("coin_total_changed", totalCoins, collectedCoins)
+
+func coin_total_changed(newTotal):
+	#delete later
+	totalCoins = newTotal
+	emit_signal("coin_total_changed", totalCoins, collectedCoins)

@@ -12,15 +12,15 @@ func on_area_entered(area2d):
 	#var target = get_node("./ball").position.angle_to_point(position)
 	var pos = get_tree().get_nodes_in_group("player")[0].position
 	var target = pos.angle_to_point(position)
-	print(target)
+	#print(target)
 	$AnimatedSprite.rotate(target)
 	#$AnimatedSprite.rotate(target)
 	#https://godotengine.org/qa/75945/how-to-rotate-a-sprite-to-an-angle-linearly-not-lerping
 	
 	#$AnimatedSprite.rotate(2)
-	#disable_pickup()
+	call_deferred("disable_pickup")
 	var baseLevel = get_tree().get_nodes_in_group("base_level")[0]
-	baseLevel.pin_collected()
+	baseLevel.call_deferred("pin_collected")
 
 func disable_pickup():
 	$hitbox/CollisionShape2D.disabled = true
