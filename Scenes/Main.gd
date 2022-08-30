@@ -17,7 +17,7 @@ func _ready():
 	 # Replace with function body.
 	spawnPosition = $ball.global_position
 	register_player($ball)
-	#print("STARTING PINS: " + pinsLeft)
+	print("STARTING PINS: " + str(pinsLeft))
 
 func register_player(player):
 	currentPlayerNode = player
