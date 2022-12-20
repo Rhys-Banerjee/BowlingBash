@@ -1,6 +1,6 @@
 extends Node2D
 
-
+var pi = 3.14159265358979323846264
 
 func _ready():
 	add_to_group("pin")
@@ -8,11 +8,15 @@ func _ready():
 
 func on_area_entered(area2d):
 	$AnimatedSprite.play("knocked")
-	$AnimationPlayer.play("knocked")
+	#$AnimationPlayer.play("knocked")
 	#var target = get_node("./ball").position.angle_to_point(position)
 	var pos = get_tree().get_nodes_in_group("player")[0].position
-	var target = pos.angle_to_point(position)
-	#print(target)
+	var target = pos.angle_to_point(position) - (pi/2)
+	var ball_velocity = get_tree().get_nodes_in_group("player")[0].velocity
+	var force = ball_velocity.length()/10
+	var offset = Vector2(force, 0).rotated(target-(pi/2))
+	translate(offset)
+	# Rotate the pin's sprite using the angle in radians
 	$AnimatedSprite.rotate(target)
 	#$AnimatedSprite.rotate(target)
 	#https://godotengine.org/qa/75945/how-to-rotate-a-sprite-to-an-angle-linearly-not-lerping
