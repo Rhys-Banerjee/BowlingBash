@@ -13,7 +13,7 @@ func on_area_entered(area2d):
 	var pos = get_tree().get_nodes_in_group("player")[0].position
 	var target = pos.angle_to_point(position) - (pi/2)
 	var ball_velocity = get_tree().get_nodes_in_group("player")[0].velocity
-	var force = ball_velocity.length()/10
+	var force = ball_velocity.length()/7
 	var offset = Vector2(force, 0).rotated(target-(pi/2))
 	translate(offset)
 	# Rotate the pin's sprite using the angle in radians
