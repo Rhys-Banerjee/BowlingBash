@@ -38,12 +38,17 @@ func pin_collected():
 	pinsLeft -= 1
 	emit_signal("pin_total_changed", totalPins, collectedPins)
 	print(pinsLeft)
+	if pinsLeft == 0:
+		player_won()
 
 func pin_total_changed(newTotal):
 	totalPins = newTotal
-	print(pinsLeft)
 	emit_signal("pin_total_changed", totalPins, collectedPins)
 	
+
+func player_won():
+	print("you just won!")
+
 func coin_collected():
 	#delete later
 	collectedCoins += 1
