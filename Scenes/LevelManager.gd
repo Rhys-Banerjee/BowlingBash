@@ -9,8 +9,8 @@ func test():
 
 func change_level(levelIndex):
 	currentLevelIndex = levelIndex
-	#if (currentLevelIndex >= levelScenes.size()):
-		#currentLevelIndex = 0
+	if (currentLevelIndex >= levelScenes.size()):
+		currentLevelIndex = 0
 	get_tree().change_scene(levelScenes[currentLevelIndex].resource_path)
 	
 func increment_level():
