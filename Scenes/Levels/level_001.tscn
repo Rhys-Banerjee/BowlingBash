@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scenes/Main.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/pin.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/pin.tscn" type="PackedScene" id=3]
 
 [node name="BaseLevel" instance=ExtResource( 1 )]
 
@@ -11,9 +10,3 @@ tile_data = PoolIntArray( 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0
 
 [node name="pins" parent="." index="2"]
 script = ExtResource( 2 )
-
-[node name="pin" parent="pins" index="0"]
-position = Vector2( 585.787, 198.606 )
-
-[node name="pin2" parent="pins" index="1" instance=ExtResource( 3 )]
-position = Vector2( 592.821, 580.922 )

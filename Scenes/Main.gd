@@ -2,6 +2,7 @@ extends Node2D
 
 signal pin_total_changed
 signal coin_total_changed #delete later
+var levelManager = load("res://Scenes/LevelManager.gd").new()
 
 var playerScene = preload("res://scenes/ball.tscn")
 var spawnPosition = Vector2.ZERO
@@ -47,14 +48,4 @@ func pin_total_changed(newTotal):
 	
 
 func player_won():
-	print("you just won!")
-
-func coin_collected():
-	#delete later
-	collectedCoins += 1
-	emit_signal("coin_total_changed", totalCoins, collectedCoins)
-
-func coin_total_changed(newTotal):
-	#delete later
-	totalCoins = newTotal
-	emit_signal("coin_total_changed", totalCoins, collectedCoins)
+	levelManager.increment_level()

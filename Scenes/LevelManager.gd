@@ -4,7 +4,8 @@ export(Array, PackedScene) var levelScenes
 
 var currentLevelIndex = 0
 
-
+func test():
+	print("level increase")
 
 func change_level(levelIndex):
 	currentLevelIndex = levelIndex
