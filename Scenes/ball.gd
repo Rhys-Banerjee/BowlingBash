@@ -11,7 +11,7 @@ onready var isDead = false
 var localScore = 0
 var visited = []
 signal increase_Player_score
-
+var hasTimerStarted = false
 var velocity = Vector2.ZERO
 
 func _ready():
@@ -30,7 +30,8 @@ func _physics_process(delta):
 	input_vector = input_vector.normalized()
 	if Input.is_action_pressed("space"):
 		$AnimationPlayer.play("jump")
-		
+		$jump_timer.start()
+		inAir()
 	if input_vector != Vector2.ZERO:
 		velocity += input_vector * ACCELERATION * delta
 		velocity = velocity.clamped(MAX_SPEED)
@@ -39,3 +40,16 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity)
 		#if collision.collider.is_in_group("platforms"):
 		#	print("")
+
+func inAir():
+	if $jump_timer.time_left > 0:
+		#$pinHitbox.hide()
+		#$platformHitbox.hide()
+		#$deathBox.hide()
+		pass
+		#$pinHitbox/CollisionShape2D.set("disabled", true)
+		#$platformHitbox/CollisionShape2D.set("disabled", true)
+	else:
+		#$pinHitbox/CollisionShape2D.set("disabled", false)
+		#$platformHitbox/CollisionShape2D.set("disabled", false)
+		pass
