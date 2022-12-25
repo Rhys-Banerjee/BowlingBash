@@ -10,3 +10,6 @@ tile_data = PoolIntArray( 65588, 0, 0, 65589, 0, 0, 65590, 0, 0, 65591, 0, 0, 65
 
 [node name="pin2" parent="pins" index="0" instance=ExtResource( 2 )]
 position = Vector2( 2142.19, 331.672 )
+
+[node name="pin" parent="pins" index="1" instance=ExtResource( 2 )]
+position = Vector2( 2143.2, 106.254 )
