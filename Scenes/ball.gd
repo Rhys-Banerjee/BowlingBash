@@ -17,13 +17,16 @@ var hasExitedPlatform = false
 
 func _ready():
 	$platformHitbox.connect("area_exited", self, "on_area_exited")
+	$platformHitbox.connect("area_entered", self, "on_area_entered")
 
 func on_area_exited(area2d):
 	if $jump_timer.time_left == 0:
 		emit_signal("died")
 	else:
 		hasExitedPlatform = true
-	
+
+func on_area_entered(area2d):
+	hasExitedPlatform = false
 
 func get_position():
 	return position
