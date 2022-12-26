@@ -13,6 +13,7 @@ var visited = []
 signal increase_Player_score
 var hasTimerStarted = false
 var velocity = Vector2.ZERO
+var hasExitedPlatform = false
 
 func _ready():
 	$platformHitbox.connect("area_exited", self, "on_area_exited")
@@ -20,6 +21,9 @@ func _ready():
 func on_area_exited(area2d):
 	if $jump_timer.time_left == 0:
 		emit_signal("died")
+	else:
+		hasExitedPlatform = true
+	
 
 func get_position():
 	return position
@@ -35,6 +39,8 @@ func _physics_process(delta):
 		inAir()
 		$pinHitbox/CollisionShape2D.set("disabled", false)
 		$deathBox/CollisionShape2D.set("disabled", false)
+	if hasExitedPlatform and $jump_timer.time_left == 0:
+		emit_signal("died")
 	if input_vector != Vector2.ZERO:
 		velocity += input_vector * ACCELERATION * delta
 		velocity = velocity.clamped(MAX_SPEED)
