@@ -18,7 +18,8 @@ func _ready():
 	$platformHitbox.connect("area_exited", self, "on_area_exited")
 
 func on_area_exited(area2d):
-	emit_signal("died")
+	if $jump_timer.time_left == 0:
+		emit_signal("died")
 
 func get_position():
 	return position
@@ -32,6 +33,8 @@ func _physics_process(delta):
 		$AnimationPlayer.play("jump")
 		$jump_timer.start()
 		inAir()
+		$pinHitbox/CollisionShape2D.set("disabled", false)
+		$deathBox/CollisionShape2D.set("disabled", false)
 	if input_vector != Vector2.ZERO:
 		velocity += input_vector * ACCELERATION * delta
 		velocity = velocity.clamped(MAX_SPEED)
@@ -43,13 +46,5 @@ func _physics_process(delta):
 
 func inAir():
 	if $jump_timer.time_left > 0:
-		#$pinHitbox.hide()
-		#$platformHitbox.hide()
-		#$deathBox.hide()
-		pass
-		#$pinHitbox/CollisionShape2D.set("disabled", true)
-		#$platformHitbox/CollisionShape2D.set("disabled", true)
-	else:
-		#$pinHitbox/CollisionShape2D.set("disabled", false)
-		#$platformHitbox/CollisionShape2D.set("disabled", false)
-		pass
+		$pinHitbox/CollisionShape2D.set_deferred("disabled", true) 
+		$deathBox/CollisionShape2D.set_deferred("disabled", true)
