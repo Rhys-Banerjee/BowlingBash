@@ -559,6 +559,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 1/z_index = 0
 
 [node name="BaseLevel" type="Node2D" groups=["base_level"]]
+position = Vector2( -10, 0 )
 scale = Vector2( 0.995242, 1.00702 )
 script = ExtResource( 5 )
 
