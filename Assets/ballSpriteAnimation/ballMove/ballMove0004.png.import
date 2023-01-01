@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ballMoveSprite1.png-a7c12e5c7f007f9b7ace964a156c3c7d.stex"
+path="res://.import/ballMove0004.png-5d2056439892868e5e1b9bd9ff28323f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ballSpriteAnimation/ballMoveSprite1.png"
-dest_files=[ "res://.import/ballMoveSprite1.png-a7c12e5c7f007f9b7ace964a156c3c7d.stex" ]
+source_file="res://Assets/ballSpriteAnimation/ballMove/ballMove0004.png"
+dest_files=[ "res://.import/ballMove0004.png-5d2056439892868e5e1b9bd9ff28323f.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0
