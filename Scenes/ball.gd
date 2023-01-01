@@ -38,10 +38,9 @@ func _physics_process(delta):
 	input_vector = input_vector.normalized()
 	if Input.is_action_pressed("space"):
 		$AnimationPlayer.play("jump")
-		$jump_timer.start()
 		inAir()
-		$pinHitbox/CollisionShape2D.set("disabled", false)
-		$deathBox/CollisionShape2D.set("disabled", false)
+	$deathBox/CollisionShape2D.set("disabled", false)
+	$pinHitbox/CollisionShape2D.set("disabled", false)
 	if hasExitedPlatform and $jump_timer.time_left == 0:
 		emit_signal("died")
 	if input_vector != Vector2.ZERO:
@@ -54,6 +53,7 @@ func _physics_process(delta):
 		#	print("")
 
 func inAir():
+	$jump_timer.start()
 	if $jump_timer.time_left > 0:
 		$pinHitbox/CollisionShape2D.set_deferred("disabled", true) 
 		$deathBox/CollisionShape2D.set_deferred("disabled", true)

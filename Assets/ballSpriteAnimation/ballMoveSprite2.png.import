@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ballMoveSprite2.png-0208557d98238efa1de92839f5f11fef.stex"
+path="res://.import/ballMoveSprite2.png-e3597f626fba7ad86ff44edeb48b21f4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ballMoveSprite2.png"
-dest_files=[ "res://.import/ballMoveSprite2.png-0208557d98238efa1de92839f5f11fef.stex" ]
+source_file="res://Assets/ballSpriteAnimation/ballMoveSprite2.png"
+dest_files=[ "res://.import/ballMoveSprite2.png-e3597f626fba7ad86ff44edeb48b21f4.stex" ]
 
 [params]
 
