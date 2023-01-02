@@ -1,6 +1,7 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://Scenes/ball.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/UI/LevelUI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Main.gd" type="Script" id=5]
 [ext_resource path="res://Assets/ballAndPins/platformTemp.png" type="Texture" id=7]
@@ -562,6 +563,8 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 position = Vector2( -10, 0 )
 scale = Vector2( 0.995242, 1.00702 )
 script = ExtResource( 5 )
+
+[node name="LevelUI" parent="." instance=ExtResource( 2 )]
 
 [node name="Camera2D" parent="." instance=ExtResource( 3 )]
 

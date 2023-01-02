@@ -17,6 +17,7 @@ func _ready():
 	 # Replace with function body.
 	spawnPosition = $ball.global_position
 	register_player($ball)
+	pin_total_changed(pinsLeft)
 	print("STARTING PINS: " + str(pinsLeft))
 
 func register_player(player):
