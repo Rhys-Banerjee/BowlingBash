@@ -26,6 +26,7 @@ func _ready():
 
 func on_area_exited(area2d):
 	if $jump_timer.time_left == 0:
+		$ballAnimations.play("death")
 		emit_signal("died")
 	else:
 		hasExitedPlatform = true
@@ -42,12 +43,13 @@ func _physics_process(delta):
 	input_vector.y = Input.get_action_strength("down") - Input.get_action_strength("up")
 	input_vector = input_vector.normalized()
 	if Input.is_action_pressed("space"):
-		$AnimationPlayer.play("jump")
+		$ballAnimations.play("jump")
 		inAir()
 	$deathBox/CollisionShape2D.set("disabled", false)
 	$pinHitbox/CollisionShape2D.set("disabled", false)
 	if hasExitedPlatform and $jump_timer.time_left == 0:
 		emit_signal("died")
+		$ballAnimations.play("death")
 	if input_vector != Vector2.ZERO:
 		ballMovements.set("parameters/Idle/blend_position", input_vector)
 		ballMovements.set("parameters/Rolling/blend_position", input_vector)

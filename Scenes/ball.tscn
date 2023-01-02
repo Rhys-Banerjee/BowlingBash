@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Assets/ballAndPins/ballTemp.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/ball.gd" type="Script" id=2]
@@ -11,7 +11,7 @@
 radius = 100.286
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 24.2135
+radius = 22.9276
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
@@ -51,6 +51,58 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 5.65856, 5.58251 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=36]
+resource_name = "death"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.695225 ),
+"transitions": PoolRealArray( 1, 5.27803 ),
+"update": 0,
+"values": [ Vector2( 5.65856, 5.58251 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.69885 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.266667, 0.266667, 0.266667, 1 ) ]
 }
 
 [sub_resource type="Animation" id=30]
@@ -97,6 +149,22 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ -90.0 ]
+}
+
+[sub_resource type="Animation" id=32]
+resource_name = "jump"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0480403, 0.185816, 0.387042, 0.398825 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 5.65856, 5.58251 ), Vector2( 5, 5 ), Vector2( 8.5, 8.5 ), Vector2( 5.5, 5.5 ), Vector2( 5.65856, 5.58251 ) ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -260,16 +328,25 @@ blend_point_2/pos = Vector2( 1, 0 )
 blend_point_3/node = SubResource( 26 )
 blend_point_3/pos = Vector2( -1, 0 )
 
+[sub_resource type="AnimationNodeAnimation" id=33]
+animation = "jump"
+
 [sub_resource type="AnimationNodeStateMachineTransition" id=28]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=29]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=34]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=35]
 
 [sub_resource type="AnimationNodeStateMachine" id=11]
 states/Idle/node = SubResource( 22 )
 states/Idle/position = Vector2( -956, 120 )
 states/Rolling/node = SubResource( 27 )
 states/Rolling/position = Vector2( -720, 120 )
-transitions = [ "Idle", "Rolling", SubResource( 28 ), "Rolling", "Idle", SubResource( 29 ) ]
+states/jump/node = SubResource( 33 )
+states/jump/position = Vector2( -1124, 39 )
+transitions = [ "Idle", "Rolling", SubResource( 28 ), "Rolling", "Idle", SubResource( 29 ), "Idle", "jump", SubResource( 34 ), "Rolling", "jump", SubResource( 35 ) ]
 start_node = "Idle"
 graph_offset = Vector2( -1412, 0 )
 
@@ -345,9 +422,11 @@ animation = "move"
 [node name="ballAnimations" type="AnimationPlayer" parent="."]
 root_node = NodePath("../ballSprite")
 anims/RESET = SubResource( 8 )
+anims/death = SubResource( 36 )
 anims/idleDown = SubResource( 30 )
 anims/idleLeft = SubResource( 16 )
 anims/idleRight = SubResource( 17 )
+anims/jump = SubResource( 32 )
 anims/roll = SubResource( 9 )
 anims/rollDown = SubResource( 14 )
 anims/rollLeft = SubResource( 13 )
@@ -379,5 +458,9 @@ anims/RESET = SubResource( 5 )
 anims/jump = SubResource( 6 )
 
 [node name="jump_timer" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[node name="death_timer" type="Timer" parent="."]
 wait_time = 0.4
 one_shot = true
