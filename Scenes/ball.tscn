@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Assets/ballAndPins/ballTemp.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/ball.gd" type="Script" id=2]
@@ -53,6 +53,21 @@ tracks/1/keys = {
 "values": [ 0.0 ]
 }
 
+[sub_resource type="Animation" id=30]
+resource_name = "idleDown"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 180.0 ]
+}
+
 [sub_resource type="Animation" id=16]
 resource_name = "idleLeft"
 loop = true
@@ -81,7 +96,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 270.0 ]
+"values": [ -90.0 ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -140,7 +155,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ 180.0 ]
 }
 
 [sub_resource type="Animation" id=13]
@@ -204,24 +219,24 @@ tracks/1/keys = {
 [sub_resource type="AnimationNodeAnimation" id=18]
 animation = "RESET"
 
-[sub_resource type="AnimationNodeAnimation" id=19]
-animation = "RESET"
-
 [sub_resource type="AnimationNodeAnimation" id=20]
 animation = "idleLeft"
 
 [sub_resource type="AnimationNodeAnimation" id=21]
 animation = "idleRight"
 
+[sub_resource type="AnimationNodeAnimation" id=31]
+animation = "idleDown"
+
 [sub_resource type="AnimationNodeBlendSpace2D" id=22]
 blend_point_0/node = SubResource( 18 )
-blend_point_0/pos = Vector2( 0, 1 )
-blend_point_1/node = SubResource( 19 )
-blend_point_1/pos = Vector2( 0, -0.9 )
-blend_point_2/node = SubResource( 20 )
-blend_point_2/pos = Vector2( 1, 0 )
-blend_point_3/node = SubResource( 21 )
-blend_point_3/pos = Vector2( -1, 0 )
+blend_point_0/pos = Vector2( 0, -1 )
+blend_point_1/node = SubResource( 20 )
+blend_point_1/pos = Vector2( 1, 0 )
+blend_point_2/node = SubResource( 21 )
+blend_point_2/pos = Vector2( -1, 0 )
+blend_point_3/node = SubResource( 31 )
+blend_point_3/pos = Vector2( 0, 1 )
 
 [sub_resource type="AnimationNodeAnimation" id=23]
 animation = "roll"
@@ -250,11 +265,12 @@ blend_point_3/pos = Vector2( -1, 0 )
 [sub_resource type="AnimationNodeStateMachineTransition" id=29]
 
 [sub_resource type="AnimationNodeStateMachine" id=11]
-states/idle/node = SubResource( 22 )
-states/idle/position = Vector2( -956, 120 )
-states/rolling/node = SubResource( 27 )
-states/rolling/position = Vector2( -720, 120 )
-transitions = [ "idle", "rolling", SubResource( 28 ), "rolling", "idle", SubResource( 29 ) ]
+states/Idle/node = SubResource( 22 )
+states/Idle/position = Vector2( -956, 120 )
+states/Rolling/node = SubResource( 27 )
+states/Rolling/position = Vector2( -720, 120 )
+transitions = [ "Idle", "Rolling", SubResource( 28 ), "Rolling", "Idle", SubResource( 29 ) ]
+start_node = "Idle"
 graph_offset = Vector2( -1412, 0 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=12]
@@ -329,6 +345,7 @@ animation = "move"
 [node name="ballAnimations" type="AnimationPlayer" parent="."]
 root_node = NodePath("../ballSprite")
 anims/RESET = SubResource( 8 )
+anims/idleDown = SubResource( 30 )
 anims/idleLeft = SubResource( 16 )
 anims/idleRight = SubResource( 17 )
 anims/roll = SubResource( 9 )
@@ -341,8 +358,8 @@ tree_root = SubResource( 11 )
 anim_player = NodePath("../ballAnimations")
 active = true
 parameters/playback = SubResource( 12 )
-parameters/idle/blend_position = Vector2( 0.006006, -0.0258621 )
-parameters/rolling/blend_position = Vector2( 0.00450456, -0.905172 )
+parameters/Idle/blend_position = Vector2( 0, -1 )
+parameters/Rolling/blend_position = Vector2( -0.003003, -1 )
 
 [node name="throwaway" type="CollisionShape2D" parent="."]
 visible = false
