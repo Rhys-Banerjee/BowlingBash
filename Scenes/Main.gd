@@ -18,7 +18,6 @@ func _ready():
 	spawnPosition = $ball.global_position
 	register_player($ball)
 	pin_total_changed(pinsLeft)
-	print("STARTING PINS: " + str(pinsLeft))
 	$LevelTimer.start()
 	
 func register_player(player):
@@ -39,7 +38,6 @@ func pin_collected():
 	collectedPins += 1
 	pinsLeft -= 1
 	emit_signal("pin_total_changed", totalPins, collectedPins)
-	print(pinsLeft)
 	if pinsLeft == 0:
 		player_won()
 

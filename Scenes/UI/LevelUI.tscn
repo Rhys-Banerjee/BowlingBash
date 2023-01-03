@@ -75,6 +75,7 @@ tracks/3/keys = {
 script = ExtResource( 2 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 0.56
 margin_right = 40.0
 margin_bottom = 40.0
 

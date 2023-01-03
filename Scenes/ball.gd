@@ -40,7 +40,6 @@ func get_position():
 	return position
 	
 func _physics_process(delta):
-	print("PLEASE HELP: ", levelTimer.time_left)
 	if levelTimer.time_left == 0:
 		emit_signal("died")
 		levelTimer.start()
