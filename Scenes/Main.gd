@@ -19,11 +19,12 @@ func _ready():
 	register_player($ball)
 	pin_total_changed(pinsLeft)
 	print("STARTING PINS: " + str(pinsLeft))
-
+	$LevelTimer.start()
+	
 func register_player(player):
 	currentPlayerNode = player
 	currentPlayerNode.connect("died", self, "on_player_died", [], CONNECT_DEFERRED)
-
+	
 func create_player():
 	var playerInstance = playerScene.instance()
 	add_child_below_node(currentPlayerNode, playerInstance)
@@ -46,6 +47,5 @@ func pin_total_changed(newTotal):
 	totalPins = newTotal
 	emit_signal("pin_total_changed", totalPins, collectedPins)
 	
-
 func player_won():
 	LevelManager.increment_level()

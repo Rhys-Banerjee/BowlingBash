@@ -20,6 +20,8 @@ var hasTimerStarted = false
 var velocity = Vector2.ZERO
 var hasExitedPlatform = false
 
+onready var levelTimer = get_parent().get_node("LevelTimer")
+
 func _ready():
 	$platformHitbox.connect("area_exited", self, "on_area_exited")
 	$platformHitbox.connect("area_entered", self, "on_area_entered")
@@ -38,6 +40,10 @@ func get_position():
 	return position
 	
 func _physics_process(delta):
+	print("PLEASE HELP: ", levelTimer.time_left)
+	if levelTimer.time_left == 0:
+		emit_signal("died")
+		levelTimer.start()
 	var input_vector = Vector2.ZERO
 	input_vector.x = Input.get_action_strength("right") - Input.get_action_strength("left")
 	input_vector.y = Input.get_action_strength("down") - Input.get_action_strength("up")
