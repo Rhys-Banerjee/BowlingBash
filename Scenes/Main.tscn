@@ -564,9 +564,9 @@ position = Vector2( -10, 0 )
 scale = Vector2( 0.995242, 1.00702 )
 script = ExtResource( 5 )
 
-[node name="LevelUI" parent="." instance=ExtResource( 2 )]
-
 [node name="Camera2D" parent="." instance=ExtResource( 3 )]
+
+[node name="LevelUI" parent="." instance=ExtResource( 2 )]
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 16
