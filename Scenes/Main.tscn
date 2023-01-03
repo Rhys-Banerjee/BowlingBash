@@ -1,10 +1,14 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://Scenes/ball.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/UI/LevelUI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/backgrounds/darkmoody/back1.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Main.gd" type="Script" id=5]
+[ext_resource path="res://Assets/backgrounds/darkmoody/back1point5.png" type="Texture" id=6]
 [ext_resource path="res://Assets/ballAndPins/platformTemp.png" type="Texture" id=7]
+[ext_resource path="res://Assets/backgrounds/darkmoody/back2.png" type="Texture" id=8]
+[ext_resource path="res://Assets/backgrounds/darkmoody/back3.png" type="Texture" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -564,6 +568,41 @@ position = Vector2( -10, 0 )
 scale = Vector2( 0.995242, 1.00702 )
 script = ExtResource( 5 )
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="backdrop" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 4096, 4096 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/backdrop"]
+position = Vector2( -635.021, -213.501 )
+scale = Vector2( 3.74977, 4.56131 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="stars1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 1.15, 1.15 )
+motion_mirroring = Vector2( 2048, 1200 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/stars1"]
+texture = ExtResource( 6 )
+centered = false
+
+[node name="stars2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 1.5, 1.5 )
+motion_mirroring = Vector2( 2048, 1200 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/stars2"]
+texture = ExtResource( 8 )
+centered = false
+
+[node name="stars3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 2, 2 )
+motion_mirroring = Vector2( 2048, 1024 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/stars3"]
+texture = ExtResource( 9 )
+centered = false
+
 [node name="Camera2D" parent="." instance=ExtResource( 3 )]
 
 [node name="LevelUI" parent="." instance=ExtResource( 2 )]
@@ -572,7 +611,18 @@ script = ExtResource( 5 )
 collision_layer = 16
 collision_mask = 16
 
-[node name="TileMap" type="TileMap" parent="Area2D"]
+[node name="backgroundTiles" type="TileMap" parent="Area2D"]
+modulate = Color( 0.392157, 0.356863, 0.356863, 1 )
+position = Vector2( 8.03825, 167.822 )
+tile_set = SubResource( 1 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 64
+collision_use_parent = true
+collision_layer = 48
+collision_mask = 48
+format = 1
+
+[node name="mainTiles" type="TileMap" parent="Area2D"]
 tile_set = SubResource( 1 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 64

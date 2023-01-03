@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://resources/theme.tres" type="Theme" id=1]
 [ext_resource path="res://Scenes/UI/LevelUI.gd" type="Script" id=2]
+[ext_resource path="res://resources/font_outline.tres" type="DynamicFont" id=3]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -67,16 +68,16 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.232044 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 0 ) ]
 }
 
 [node name="LevelUI" type="CanvasLayer"]
 script = ExtResource( 2 )
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-modulate = Color( 0, 0, 0, 1 )
-margin_right = 40.0
-margin_bottom = 40.0
+margin_top = 2.0
+margin_right = 410.0
+margin_bottom = 113.0
 mouse_filter = 2
 theme = ExtResource( 1 )
 custom_constants/margin_right = 20
@@ -89,6 +90,7 @@ margin_left = 20.0
 margin_top = 20.0
 margin_right = 390.0
 margin_bottom = 91.0
+custom_fonts/font = ExtResource( 3 )
 text = "0 pins collected
 8 pins total"
 
@@ -106,6 +108,7 @@ margin_left = 500.0
 margin_top = 225.0
 margin_right = 525.0
 margin_bottom = 259.0
+custom_fonts/font = ExtResource( 3 )
 text = "8"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Popups/Label"]
