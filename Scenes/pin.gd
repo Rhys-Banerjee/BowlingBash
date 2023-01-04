@@ -8,7 +8,6 @@ func _ready():
 
 func on_area_entered(area2d):
 	#$AnimatedSprite.play("knocked")
-	$"/root/Helpers".apply_regular_camera_shake(0)
 	$"/root/Helpers".apply_camera_shake(1)
 	$pinAnimations.play("Knocked")
 	#$AnimationPlayer.play("knocked")

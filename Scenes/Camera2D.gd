@@ -24,12 +24,12 @@ var eventShakeDecay = .8
 
 func _ready():
 	VisualServer.set_default_clear_color(backgroundColor)
-
+	
 func _process(delta):
 	acquire_target_position()
 	global_position = lerp(targetPosition, global_position, pow(4,-20 * delta))
 	# normal camera shake
-	if (currentShakePercentage > 0):
+	if (currentShakePercentage > 0) and (eventCurrentShakePercentage == 0):
 		xNoiseSamplePosition += xNoiseSampleVector * noiseSampleTravelRate * delta
 		yNoiseSamplePosition += yNoiseSampleVector * noiseSampleTravelRate * delta
 		var xSample = shakeNoise.get_noise_2d(xNoiseSamplePosition.x, xNoiseSamplePosition.y)
@@ -39,7 +39,7 @@ func _process(delta):
 		offset = calculated_offset
 	
 	#event camera shake
-	elif (eventCurrentShakePercentage > 0):
+	elif (eventCurrentShakePercentage > 0) and (currentShakePercentage == 0):
 		xNoiseSamplePosition += xNoiseSampleVector * noiseSampleTravelRate * delta
 		yNoiseSamplePosition += yNoiseSampleVector * noiseSampleTravelRate * delta
 		var xSample = eventShakeNoise.get_noise_2d(xNoiseSamplePosition.x, xNoiseSamplePosition.y)
@@ -60,3 +60,15 @@ func apply_shake(percentage):
 
 func apply_event_shake(percentage):
 	eventCurrentShakePercentage = clamp(eventCurrentShakePercentage + percentage, 0, 1)
+
+func get_eventCurrentShakePercentage():
+	return eventCurrentShakePercentage
+
+func set_eventCurrentShakePercentage(percent):
+	eventCurrentShakePercentage = percent
+
+func get_CurrentShakePercentage():
+	return currentShakePercentage
+	
+func set_CurrentShakePercentage(percent):
+	currentShakePercentage = percent

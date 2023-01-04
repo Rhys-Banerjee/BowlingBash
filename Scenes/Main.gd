@@ -21,6 +21,7 @@ func _ready():
 	register_player($ball)
 	pin_total_changed(pinsLeft)
 	$LevelTimer.start()
+	$"/root/Helpers".apply_regular_camera_shake(1)
 	
 func register_player(player):
 	currentPlayerNode = player
