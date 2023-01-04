@@ -7,10 +7,10 @@
 script = ExtResource( 2 )
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-margin_left = 316.0
+margin_left = 314.0
 margin_top = 245.0
-margin_right = 707.0
-margin_bottom = 355.0
+margin_right = 745.0
+margin_bottom = 395.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource( 1 )
