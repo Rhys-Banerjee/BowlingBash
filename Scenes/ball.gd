@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 signal died
+signal timeRanOut
 
 const MAX_SPEED = 1200
 const ACCELERATION = 800
@@ -41,14 +42,14 @@ func get_position():
 	
 func _physics_process(delta):
 	if levelTimer.time_left == 0:
-		emit_signal("died")
+		emit_signal("timeRanOut")
 		levelTimer.start()
 	var input_vector = Vector2.ZERO
 	input_vector.x = Input.get_action_strength("right") - Input.get_action_strength("left")
 	input_vector.y = Input.get_action_strength("down") - Input.get_action_strength("up")
 	input_vector = input_vector.normalized()
 	if Input.is_action_pressed("space"):
-		$"/root/Helpers".apply_camera_shake(1)
+		#$"/root/Helpers".apply_camera_shake(1)
 		
 		$ballAnimations.play("jump")
 		inAir()

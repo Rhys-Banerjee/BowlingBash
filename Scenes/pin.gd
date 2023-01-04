@@ -2,13 +2,15 @@ extends Node2D
 
 var pi = 3.14159265358979323846264
 
+var originalPosition = position
+
 func _ready():
 	add_to_group("pin")
 	$hitbox.connect("area_entered", self, "on_area_entered")
 
 func on_area_entered(area2d):
 	#$AnimatedSprite.play("knocked")
-	$"/root/Helpers".apply_camera_shake(1)
+	#$"/root/Helpers".apply_camera_shake(1)
 	$pinAnimations.play("Knocked")
 	#$AnimationPlayer.play("knocked")
 	#var target = get_node("./ball").position.angle_to_point(position)

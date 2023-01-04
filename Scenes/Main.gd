@@ -26,6 +26,7 @@ func _ready():
 func register_player(player):
 	currentPlayerNode = player
 	currentPlayerNode.connect("died", self, "on_player_died", [], CONNECT_DEFERRED)
+	currentPlayerNode.connect("timeRanOut", self, "on_time_ran_out")
 	
 func create_player():
 	var playerInstance = playerScene.instance()
@@ -37,6 +38,10 @@ func on_player_died():
 	if currentPlayerNode != null:
 		currentPlayerNode.queue_free()
 		create_player()
+
+func on_time_ran_out():
+	get_tree().reload_current_scene()
+	
 
 func pin_collected():
 	collectedPins += 1
