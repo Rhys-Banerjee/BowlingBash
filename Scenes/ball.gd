@@ -48,6 +48,8 @@ func _physics_process(delta):
 	input_vector.y = Input.get_action_strength("down") - Input.get_action_strength("up")
 	input_vector = input_vector.normalized()
 	if Input.is_action_pressed("space"):
+		$"/root/Helpers".apply_regular_camera_shake(0)
+		$"/root/Helpers".apply_camera_shake(1)
 		$ballAnimations.play("jump")
 		inAir()
 	$deathBox/CollisionShape2D.set("disabled", false)
