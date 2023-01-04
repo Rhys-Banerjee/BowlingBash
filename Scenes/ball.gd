@@ -29,12 +29,9 @@ func _ready():
 
 func on_area_exited(area2d):
 	if $jump_timer.time_left == 0:
-		var deathTimer = Timer.new()
-		add_child(deathTimer)
-		deathTimer.wait_time = 0.4
-		deathTimer.one_shot = true
-		deathTimer.start()
-		deathTimer.connect("timeout", self, "_on_timer_timeout")
+		$death_timer.start()
+		$death_timer.connect("timeout", self, "_on_timer_timeout")
+		#get_parent().move_child(self, 3)
 		$ballAnimations.play("death")
 		#emit_signal("died")
 	else:
@@ -62,12 +59,8 @@ func _physics_process(delta):
 	$deathBox/CollisionShape2D.set("disabled", false)
 	$pinHitbox/CollisionShape2D.set("disabled", false)
 	if hasExitedPlatform and $jump_timer.time_left == 0:
-		var deathTimer := Timer.new()
-		add_child(deathTimer)
-		deathTimer.wait_time = 0.4
-		deathTimer.one_shot = true
-		deathTimer.start()
-		deathTimer.connect("timeout", self, "_on_timer_timeout")
+		$death_timer.start()
+		$death_timer.connect("timeout", self, "_on_timer_timeout")
 		$ballAnimations.play("death")
 		#if $death_timer.is_stopped():
 		#	emit_signal("died")
@@ -86,6 +79,7 @@ func _physics_process(delta):
 		
 func _on_timer_timeout() -> void:
 	emit_signal("died")
+	#get_parent().move_child(self, 7)
 	
 func inAir():
 	$jump_timer.start()

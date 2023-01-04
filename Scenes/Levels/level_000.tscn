@@ -39,5 +39,5 @@ position = Vector2( 431.051, 726.897 )
 [node name="pin8" parent="pins" index="7" instance=ExtResource( 2 )]
 position = Vector2( 868.131, 715.974 )
 
-[node name="ball" parent="." index="7"]
+[node name="ball" parent="." index="6"]
 position = Vector2( 227.08, 198.606 )

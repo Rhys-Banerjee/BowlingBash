@@ -574,8 +574,6 @@ levelCompleteScene = ExtResource( 10 )
 wait_time = 10.0
 autostart = true
 
-[node name="Timers" type="Node" parent="."]
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="backdrop" type="ParallaxLayer" parent="ParallaxBackground"]
