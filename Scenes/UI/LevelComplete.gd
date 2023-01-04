@@ -8,7 +8,7 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$MarginContainer/VBoxContainer/Button.connect("pressed", self, "on_next_button_pressed")
+	$PanelContainer/MarginContainer/VBoxContainer/Button.connect("pressed", self, "on_next_button_pressed")
 
 func on_next_button_pressed():
 	$"/root/LevelManager".increment_level()
