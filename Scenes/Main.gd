@@ -4,6 +4,8 @@ signal pin_total_changed
 signal coin_total_changed #delete later
 
 var playerScene = preload("res://scenes/ball.tscn")
+export(PackedScene) var levelCompleteScene
+
 var spawnPosition = Vector2.ZERO
 var currentPlayerNode = null
 var totalPins = 0
@@ -31,8 +33,9 @@ func create_player():
 	register_player(playerInstance)
 
 func on_player_died():
-	currentPlayerNode.queue_free()
-	create_player()
+	if currentPlayerNode != null:
+		currentPlayerNode.queue_free()
+		create_player()
 
 func pin_collected():
 	collectedPins += 1
@@ -46,4 +49,12 @@ func pin_total_changed(newTotal):
 	emit_signal("pin_total_changed", totalPins, collectedPins)
 	
 func player_won():
-	LevelManager.increment_level()
+	currentPlayerNode.disconnect("died", self, "on_player_died")
+	currentPlayerNode.queue_free()
+	$LevelTimer.set_paused(true)
+	var levelComplete = levelCompleteScene.instance()
+	add_child(levelComplete)
+	#LevelManager.increment_level()
+
+	
+	#LevelManager.increment_level()

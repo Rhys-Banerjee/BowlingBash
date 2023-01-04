@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=68 format=2]
 
 [ext_resource path="res://Scenes/ball.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/UI/LevelUI.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Assets/ballAndPins/platformTemp.png" type="Texture" id=7]
 [ext_resource path="res://Assets/backgrounds/darkmoody/back2.png" type="Texture" id=8]
 [ext_resource path="res://Assets/backgrounds/darkmoody/back3.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/UI/LevelComplete.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -567,6 +568,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 position = Vector2( -10, 0 )
 scale = Vector2( 0.995242, 1.00702 )
 script = ExtResource( 5 )
+levelCompleteScene = ExtResource( 10 )
 
 [node name="LevelTimer" type="Timer" parent="."]
 wait_time = 10.0
