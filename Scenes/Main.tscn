@@ -594,7 +594,7 @@ texture = ExtResource( 6 )
 centered = false
 
 [node name="stars2" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 1.5, 1.5 )
+motion_scale = Vector2( 1.25, 1.25 )
 motion_mirroring = Vector2( 2048, 1200 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/stars2"]
@@ -602,7 +602,7 @@ texture = ExtResource( 8 )
 centered = false
 
 [node name="stars3" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 2, 2 )
+motion_scale = Vector2( 1.5, 1.5 )
 motion_mirroring = Vector2( 2048, 1024 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/stars3"]
