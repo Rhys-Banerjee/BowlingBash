@@ -20,6 +20,7 @@ signal increase_Player_score
 var hasTimerStarted = false
 var velocity = Vector2.ZERO
 var hasExitedPlatform = false
+var idleDeath = false
 
 onready var levelTimer = get_parent().get_node("LevelTimer")
 
@@ -30,18 +31,20 @@ func _ready():
 
 func on_area_exited(area2d):
 	if $jump_timer.time_left == 0:
+		idleDeath = true
 		$death_timer.start()
 		$death_timer.connect("timeout", self, "_on_timer_timeout")
 		#get_parent().move_child(self, 3)
 		var collision_shape = get_node("pinHitbox/CollisionShape2D")
 		collision_shape.set("disabled", true)
+		#velocity = Vector2.ZERO
 		$ballAnimations.play("death")
+		animationState.travel("death")
 		#emit_signal("died")
 	else:
 		hasExitedPlatform = true
 
 func on_area_entered(area2d):
-	print(str('Body entered: ', area2d.get_name()))
 	hasExitedPlatform = false
 
 func get_position():
@@ -85,13 +88,22 @@ func _physics_process(delta):
 		ballMovements.set("parameters/jump/blend_position", input_vector)
 		ballMovements.set("parameters/Idle/blend_position", input_vector)
 		ballMovements.set("parameters/Rolling/blend_position", input_vector)
+		ballMovements.set("parameters/death/blend_position", input_vector)
 		animationState.travel("Rolling")
 		velocity += input_vector * ACCELERATION * delta
 		velocity = velocity.clamped(MAX_SPEED)
 	elif input_vector == Vector2.ZERO and Input.is_action_just_pressed("space"):
 		animationState.travel("jump")
+	elif input_vector == Vector2.ZERO and idleDeath:
+		print(idleDeath)
+		ballMovements.set("parameters/death/blend_position", input_vector)
+		animationState.travel("death")
+		idleDeath = false
 	else:
-		animationState.travel("Idle")
+		if idleDeath:
+			ballAnimations.play("death")
+		else:
+			animationState.travel("Idle")
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	velocity = move_and_slide(velocity)
 		#if collision.collider.is_in_group("platforms"):

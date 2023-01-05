@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://Assets/ballAndPins/ballTemp.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/ball.gd" type="Script" id=2]
@@ -328,6 +328,9 @@ blend_point_2/pos = Vector2( 1, 0 )
 blend_point_3/node = SubResource( 26 )
 blend_point_3/pos = Vector2( -1, 0 )
 
+[sub_resource type="AnimationNodeAnimation" id=43]
+animation = "death"
+
 [sub_resource type="AnimationNodeAnimation" id=33]
 animation = "jump"
 
@@ -344,15 +347,23 @@ animation = "jump"
 [sub_resource type="AnimationNodeStateMachineTransition" id=42]
 switch_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=44]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=45]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=46]
+
 [sub_resource type="AnimationNodeStateMachine" id=11]
 states/Idle/node = SubResource( 22 )
-states/Idle/position = Vector2( -1037, 163 )
+states/Idle/position = Vector2( -693, 225 )
 states/Rolling/node = SubResource( 27 )
-states/Rolling/position = Vector2( -724, 120 )
+states/Rolling/position = Vector2( -207, 87 )
+states/death/node = SubResource( 43 )
+states/death/position = Vector2( -1246, 122 )
 states/jump/node = SubResource( 33 )
-states/jump/position = Vector2( -1124, 39 )
-transitions = [ "Rolling", "jump", SubResource( 35 ), "jump", "Rolling", SubResource( 37 ), "Idle", "jump", SubResource( 38 ), "Idle", "Rolling", SubResource( 40 ), "Rolling", "Idle", SubResource( 41 ), "jump", "Idle", SubResource( 42 ) ]
-start_node = "Rolling"
+states/jump/position = Vector2( -705, 40 )
+transitions = [ "Rolling", "jump", SubResource( 35 ), "jump", "Rolling", SubResource( 37 ), "Idle", "jump", SubResource( 38 ), "Idle", "Rolling", SubResource( 40 ), "Rolling", "Idle", SubResource( 41 ), "jump", "Idle", SubResource( 42 ), "Idle", "death", SubResource( 44 ), "Rolling", "death", SubResource( 45 ), "jump", "death", SubResource( 46 ) ]
+start_node = "Idle"
 graph_offset = Vector2( -1412, 0 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=12]
@@ -399,6 +410,7 @@ scale = Vector2( 0.309266, 0.319077 )
 script = ExtResource( 2 )
 
 [node name="pinHitbox" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 collision_mask = 2
 
@@ -406,6 +418,7 @@ collision_mask = 2
 shape = SubResource( 1 )
 
 [node name="platformHitbox" type="Area2D" parent="."]
+visible = false
 scale = Vector2( 1.12274, 1.12274 )
 collision_layer = 16
 collision_mask = 16
@@ -449,6 +462,7 @@ visible = false
 shape = SubResource( 2 )
 
 [node name="deathBox" type="Area2D" parent="."]
+visible = false
 collision_layer = 32
 collision_mask = 32
 
