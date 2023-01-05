@@ -5,6 +5,7 @@ extends Button
 # var a = 2
 # var b = "text"
 
+onready var animationPlayer = get_parent().get_node("AnimationPlayer")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,13 +14,9 @@ func _ready():
 	connect("pressed", self, "on_button_pressed")
 	
 func on_mouse_entered():
-	$AnimationPlayer.play("hover")
+	animationPlayer.play("hover")
 func on_mouse_exited():
-	$AnimationPlayer.play_backwards("hover")
+	animationPlayer.play_backwards("hover")
 func on_button_pressed():
-	$AnimationPlayer.play("click2")
+	animationPlayer.play("click")
 	
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
