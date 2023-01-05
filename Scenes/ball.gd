@@ -48,7 +48,7 @@ func get_position():
 	return position
 	
 func _physics_process(delta):
-	if Input.is_action_pressed("space"):
+	if Input.is_action_just_pressed("space"):
 			stuff()
 	if levelTimer.time_left == 0:
 		emit_signal("timeRanOut")
@@ -78,8 +78,7 @@ func _physics_process(delta):
 		#if $death_timer.is_stopped():
 		#	emit_signal("died")
 	if input_vector != Vector2.ZERO:
-		if Input.is_action_pressed("space"):
-			print("debug")
+		if Input.is_action_just_pressed("space"):
 			#$"/root/Helpers".apply_camera_shake(1)
 			ballAnimations.play("jump")
 			inAir()
@@ -89,7 +88,7 @@ func _physics_process(delta):
 		animationState.travel("Rolling")
 		velocity += input_vector * ACCELERATION * delta
 		velocity = velocity.clamped(MAX_SPEED)
-	elif input_vector == Vector2.ZERO and Input.is_action_pressed("space"):
+	elif input_vector == Vector2.ZERO and Input.is_action_just_pressed("space"):
 		animationState.travel("jump")
 	else:
 		animationState.travel("Idle")
@@ -107,7 +106,6 @@ func _on_jump_timer_timeout() -> void:
 		pass
 		#emit_signal("died")
 func stuff():
-	print("doobug")
 	#$"/root/Helpers".apply_camera_shake(1)
 	ballAnimations.play("jump")
 	inAir()
