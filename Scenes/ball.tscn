@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://Assets/ballAndPins/ballTemp.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/ball.gd" type="Script" id=2]
@@ -331,23 +331,28 @@ blend_point_3/pos = Vector2( -1, 0 )
 [sub_resource type="AnimationNodeAnimation" id=33]
 animation = "jump"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=28]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=29]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=34]
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=35]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=37]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=38]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=40]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=41]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=42]
+switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id=11]
 states/Idle/node = SubResource( 22 )
-states/Idle/position = Vector2( -956, 120 )
+states/Idle/position = Vector2( -1037, 163 )
 states/Rolling/node = SubResource( 27 )
-states/Rolling/position = Vector2( -720, 120 )
+states/Rolling/position = Vector2( -724, 120 )
 states/jump/node = SubResource( 33 )
 states/jump/position = Vector2( -1124, 39 )
-transitions = [ "Idle", "Rolling", SubResource( 28 ), "Rolling", "Idle", SubResource( 29 ), "Idle", "jump", SubResource( 34 ), "Rolling", "jump", SubResource( 35 ) ]
-start_node = "Idle"
+transitions = [ "Rolling", "jump", SubResource( 35 ), "jump", "Rolling", SubResource( 37 ), "Idle", "jump", SubResource( 38 ), "Idle", "Rolling", SubResource( 40 ), "Rolling", "Idle", SubResource( 41 ), "jump", "Idle", SubResource( 42 ) ]
+start_node = "Rolling"
 graph_offset = Vector2( -1412, 0 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=12]

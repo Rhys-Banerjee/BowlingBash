@@ -48,6 +48,8 @@ func get_position():
 	return position
 	
 func _physics_process(delta):
+	if Input.is_action_pressed("space"):
+			stuff()
 	if levelTimer.time_left == 0:
 		emit_signal("timeRanOut")
 		levelTimer.start()
@@ -55,11 +57,10 @@ func _physics_process(delta):
 	input_vector.x = Input.get_action_strength("right") - Input.get_action_strength("left")
 	input_vector.y = Input.get_action_strength("down") - Input.get_action_strength("up")
 	input_vector = input_vector.normalized()
-	if Input.is_action_pressed("space"):
-		#$"/root/Helpers".apply_camera_shake(1)
-		
-		$ballAnimations.play("jump")
-		inAir()
+	#if Input.is_action_pressed("space"):
+	#	#$"/root/Helpers".apply_camera_shake(1)
+	#	$ballAnimations.play("jump")
+	#	inAir()
 	$deathBox/CollisionShape2D.set("disabled", false)
 	$pinHitbox/CollisionShape2D.set("disabled", false)
 	if hasExitedPlatform and $jump_timer.time_left == 0:
@@ -77,11 +78,19 @@ func _physics_process(delta):
 		#if $death_timer.is_stopped():
 		#	emit_signal("died")
 	if input_vector != Vector2.ZERO:
+		if Input.is_action_pressed("space"):
+			print("debug")
+			#$"/root/Helpers".apply_camera_shake(1)
+			ballAnimations.play("jump")
+			inAir()
+		ballMovements.set("parameters/jump/blend_position", input_vector)
 		ballMovements.set("parameters/Idle/blend_position", input_vector)
 		ballMovements.set("parameters/Rolling/blend_position", input_vector)
 		animationState.travel("Rolling")
 		velocity += input_vector * ACCELERATION * delta
 		velocity = velocity.clamped(MAX_SPEED)
+	elif input_vector == Vector2.ZERO and Input.is_action_pressed("space"):
+		animationState.travel("jump")
 	else:
 		animationState.travel("Idle")
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
@@ -97,7 +106,11 @@ func _on_jump_timer_timeout() -> void:
 	if hasExitedPlatform:
 		pass
 		#emit_signal("died")
-
+func stuff():
+	print("doobug")
+	#$"/root/Helpers".apply_camera_shake(1)
+	ballAnimations.play("jump")
+	inAir()
 func inAir():
 	$jump_timer.start()
 	if $jump_timer.time_left > 0:
