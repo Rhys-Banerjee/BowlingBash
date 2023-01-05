@@ -26,18 +26,22 @@ onready var levelTimer = get_parent().get_node("LevelTimer")
 func _ready():
 	$platformHitbox.connect("area_exited", self, "on_area_exited")
 	$platformHitbox.connect("area_entered", self, "on_area_entered")
+	$jump_timer.connect("timeout", self, "_on_jump_timer_timeout")
 
 func on_area_exited(area2d):
 	if $jump_timer.time_left == 0:
 		$death_timer.start()
 		$death_timer.connect("timeout", self, "_on_timer_timeout")
 		#get_parent().move_child(self, 3)
+		var collision_shape = get_node("pinHitbox/CollisionShape2D")
+		collision_shape.set("disabled", true)
 		$ballAnimations.play("death")
 		#emit_signal("died")
 	else:
 		hasExitedPlatform = true
 
 func on_area_entered(area2d):
+	print(str('Body entered: ', area2d.get_name()))
 	hasExitedPlatform = false
 
 func get_position():
@@ -59,8 +63,16 @@ func _physics_process(delta):
 	$deathBox/CollisionShape2D.set("disabled", false)
 	$pinHitbox/CollisionShape2D.set("disabled", false)
 	if hasExitedPlatform and $jump_timer.time_left == 0:
-		$death_timer.start()
-		$death_timer.connect("timeout", self, "_on_timer_timeout")
+		var deathTimer = Timer.new()
+		add_child(deathTimer)
+		deathTimer.wait_time = 0.4
+		deathTimer.one_shot = true
+		deathTimer.start()
+		deathTimer.connect("timeout", self, "_on_timer_timeout")
+		#get_parent().move_child(self, 3)
+		var collision_shape = get_node("pinHitbox/CollisionShape2D")
+		collision_shape.set("disabled", true)
+		velocity = Vector2.ZERO
 		$ballAnimations.play("death")
 		#if $death_timer.is_stopped():
 		#	emit_signal("died")
@@ -80,7 +92,12 @@ func _physics_process(delta):
 func _on_timer_timeout() -> void:
 	emit_signal("died")
 	#get_parent().move_child(self, 7)
-	
+
+func _on_jump_timer_timeout() -> void:
+	if hasExitedPlatform:
+		pass
+		#emit_signal("died")
+
 func inAir():
 	$jump_timer.start()
 	if $jump_timer.time_left > 0:
