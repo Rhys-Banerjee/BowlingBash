@@ -12,6 +12,7 @@ onready var optionsButton = $MarginContainer/PanelContainer/MarginContainer/VBox
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	playButton.connect("pressed", self, "on_play_pressed")
+	$Node2D/Camera2D.apply_shake(1)
 
 func on_play_pressed():
 	$"/root/LevelManager".change_level(0)
