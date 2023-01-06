@@ -12,7 +12,8 @@ To Do:
 
 User flow: 
 
-Main menu (check)
+Main menu (check) (also TODO: add a controls guide on the main menu)
  - Level Select
    - Levels (check)
-        - Pause menu
+        - Pause menu (check)
+           - Options menu *can only come after sfx*
