@@ -28,12 +28,12 @@ func _ready():
 	$platformHitbox.connect("area_exited", self, "on_area_exited")
 	$platformHitbox.connect("area_entered", self, "on_area_entered")
 	$jump_timer.connect("timeout", self, "_on_jump_timer_timeout")
+	$death_timer.connect("timeout", self, "_on_timer_timeout")
 
 func on_area_exited(area2d):
 	if $jump_timer.time_left == 0:
 		idleDeath = true
-		$death_timer.start()
-		$death_timer.connect("timeout", self, "_on_timer_timeout")
+		$death_timer.start() 
 		#get_parent().move_child(self, 3)
 		#velocity = Vector2.ZERO
 		$ballAnimations.play("death")
