@@ -3,6 +3,7 @@ extends Node2D
 signal pin_total_changed
 signal coin_total_changed #delete later
 
+var pauseScene = preload("res://Scenes/UI/PauseMenu.tscn")
 var playerScene = preload("res://scenes/ball.tscn")
 export(PackedScene) var levelCompleteScene
 
@@ -12,6 +13,7 @@ var totalPins = 0
 var collectedPins = 0
 var totalCoins = 0 #delete later
 var collectedCoins = 0 #delete later
+var levelWon = false
 onready var pinsLeft = len(get_tree().get_nodes_in_group("pin"))
 
 
@@ -22,6 +24,12 @@ func _ready():
 	pin_total_changed(pinsLeft)
 	$LevelTimer.start()
 	$"/root/Helpers".apply_regular_camera_shake(1)
+	
+func _unhandled_input(event):
+	if(event.is_action_pressed("pause")) and not levelWon:
+		var pauseInstance = pauseScene.instance()
+		add_child(pauseInstance)
+		pauseInstance.connect("timeRanOut", self, "on_time_ran_out")
 	
 func register_player(player):
 	currentPlayerNode = player
@@ -55,6 +63,7 @@ func pin_total_changed(newTotal):
 	emit_signal("pin_total_changed", totalPins, collectedPins)
 	
 func player_won():
+	levelWon = true
 	currentPlayerNode.disconnect("died", self, "on_player_died")
 	currentPlayerNode.queue_free()
 	$LevelTimer.set_paused(true)
