@@ -29,7 +29,6 @@ func _unhandled_input(event):
 	if(event.is_action_pressed("pause")) and not levelWon:
 		var pauseInstance = pauseScene.instance()
 		add_child(pauseInstance)
-		pauseInstance.connect("timeRanOut", self, "on_time_ran_out")
 	
 func register_player(player):
 	currentPlayerNode = player

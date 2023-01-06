@@ -35,8 +35,6 @@ func on_area_exited(area2d):
 		$death_timer.start()
 		$death_timer.connect("timeout", self, "_on_timer_timeout")
 		#get_parent().move_child(self, 3)
-		var collision_shape = get_node("pinHitbox/CollisionShape2D")
-		collision_shape.set("disabled", true)
 		#velocity = Vector2.ZERO
 		$ballAnimations.play("death")
 		animationState.travel("death")
