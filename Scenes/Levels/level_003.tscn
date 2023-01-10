@@ -1,8 +1,33 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scenes/Main.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/pin.tscn" type="PackedScene" id=2]
 
-[node name="BaseLevel" instance=ExtResource( 1 )]
+[node name="BaseLevel2" instance=ExtResource( 1 )]
 
-[node name="Camera2D" parent="." index="2"]
-current = false
+[node name="mainTiles" parent="Area2D" index="1"]
+tile_data = PoolIntArray( 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 327698, 0, 0, 327699, 0, 0, 327700, 0, 0, 327701, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393234, 0, 0, 393235, 0, 0, 393236, 0, 0, 393237, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 0, 458773, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720914, 0, 0, 720915, 0, 0, 720916, 0, 0, 720917, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786443, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0, 786450, 0, 0, 786451, 0, 0, 786452, 0, 0, 786453, 0, 0, 851972, 0, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851979, 0, 0, 851980, 0, 0, 851981, 0, 0, 851982, 0, 0, 851986, 0, 0, 851987, 0, 0, 851988, 0, 0, 851989, 0, 0, 1114116, 0, 0, 1114117, 0, 0, 1114118, 0, 0, 1114119, 0, 0, 1114123, 0, 0, 1114124, 0, 0, 1114125, 0, 0, 1114126, 0, 0, 1114130, 0, 0, 1114131, 0, 0, 1114132, 0, 0, 1114133, 0, 0, 1179652, 0, 0, 1179653, 0, 0, 1179654, 0, 0, 1179655, 0, 0, 1179659, 0, 0, 1179660, 0, 0, 1179661, 0, 0, 1179662, 0, 0, 1179666, 0, 0, 1179667, 0, 0, 1179668, 0, 0, 1179669, 0, 0, 1245188, 0, 0, 1245189, 0, 0, 1245190, 0, 0, 1245191, 0, 0, 1245195, 0, 0, 1245196, 0, 0, 1245197, 0, 0, 1245198, 0, 0, 1245202, 0, 0, 1245203, 0, 0, 1245204, 0, 0, 1245205, 0, 0 )
+
+[node name="pin" parent="pins" index="0" instance=ExtResource( 2 )]
+position = Vector2( 190.908, 404.163 )
+
+[node name="pin2" parent="pins" index="1" instance=ExtResource( 2 )]
+position = Vector2( 191.913, 600.783 )
+
+[node name="pin3" parent="pins" index="2" instance=ExtResource( 2 )]
+position = Vector2( 417.989, 214.494 )
+
+[node name="pin4" parent="pins" index="3" instance=ExtResource( 2 )]
+position = Vector2( 645.069, 214.494 )
+
+[node name="pin5" parent="pins" index="4" instance=ExtResource( 2 )]
+position = Vector2( 422.008, 404.163 )
+
+[node name="pin6" parent="pins" index="5" instance=ExtResource( 2 )]
+position = Vector2( 426.027, 598.796 )
+
+[node name="pin7" parent="pins" index="6" instance=ExtResource( 2 )]
+position = Vector2( 645.069, 409.128 )
+
+[node name="pin8" parent="pins" index="7" instance=ExtResource( 2 )]
+position = Vector2( 645.069, 600.783 )
