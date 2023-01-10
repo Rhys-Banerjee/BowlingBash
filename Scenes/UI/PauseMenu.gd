@@ -30,7 +30,7 @@ func _unhandled_input(event):
 
 func on_restart_pressed():
 	unpause()
-	emit_signal("timeRanOut")
+	get_parent().get_tree().reload_current_scene()
 
 func on_continue_pressed():
 	unpause()

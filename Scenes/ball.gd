@@ -29,6 +29,10 @@ func _ready():
 	$platformHitbox.connect("area_entered", self, "on_area_entered")
 	$jump_timer.connect("timeout", self, "_on_jump_timer_timeout")
 	$death_timer.connect("timeout", self, "_on_timer_timeout")
+	levelTimer.connect("timeout", self, "on_level_timer_timeout")
+
+func on_level_timer_timeout():
+	emit_signal("timeRanOut")	
 
 func on_area_exited(area2d):
 	if $jump_timer.time_left == 0:
