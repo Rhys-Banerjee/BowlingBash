@@ -613,10 +613,12 @@ texture = ExtResource( 9 )
 centered = false
 
 [node name="Area2D" type="Area2D" parent="Node2D"]
+visible = false
 collision_layer = 16
 collision_mask = 16
 
 [node name="backgroundTiles" type="TileMap" parent="Node2D/Area2D"]
+visible = false
 modulate = Color( 0.392157, 0.356863, 0.356863, 1 )
 position = Vector2( 8.03825, 167.822 )
 tile_set = SubResource( 1 )
@@ -628,6 +630,7 @@ collision_mask = 48
 format = 1
 
 [node name="mainTiles" type="TileMap" parent="Node2D/Area2D"]
+visible = false
 tile_set = SubResource( 1 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 64
@@ -646,15 +649,34 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
-margin_left = 252.0
-margin_top = 172.0
-margin_right = 772.0
-margin_bottom = 427.0
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1004.0
+margin_bottom = 580.0
+custom_constants/separation = 70
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+margin_right = 984.0
+margin_bottom = 74.0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 964.0
+margin_bottom = 54.0
+text = "bowling bash"
+align = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+margin_left = 232.0
+margin_top = 144.0
+margin_right = 752.0
+margin_bottom = 399.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/PanelContainer"]
 margin_right = 520.0
 margin_bottom = 255.0
 custom_constants/margin_right = 60
@@ -662,7 +684,7 @@ custom_constants/margin_top = 40
 custom_constants/margin_left = 60
 custom_constants/margin_bottom = 40
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
 margin_left = 60.0
 margin_top = 40.0
 margin_right = 460.0
@@ -670,10 +692,10 @@ margin_bottom = 215.0
 rect_min_size = Vector2( 400, 0 )
 custom_constants/separation = 25
 
-[node name="PlayButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
+[node name="PlayButton" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
 rect_scale = Vector2( 1, 1 )
 text = "play"
 
-[node name="OptionsButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
+[node name="OptionsButton" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
 rect_scale = Vector2( 1, 1 )
 text = "options"

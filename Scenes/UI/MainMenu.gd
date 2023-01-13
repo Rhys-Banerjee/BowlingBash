@@ -1,8 +1,8 @@
 extends CanvasLayer
 
 
-onready var playButton = $MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PlayButton
-onready var optionsButton = $MarginContainer/PanelContainer/MarginContainer/VBoxContainer/OptionsButton
+onready var playButton = $MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/PlayButton
+onready var optionsButton = $MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/OptionsButton
 
 # Declare member variables here. Examples:
 # var a = 2
