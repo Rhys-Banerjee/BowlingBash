@@ -1,10 +1,11 @@
-[gd_scene load_steps=69 format=2]
+[gd_scene load_steps=70 format=2]
 
 [ext_resource path="res://resources/theme.tres" type="Theme" id=1]
 [ext_resource path="res://Scenes/UI/AnimatedButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/UI/MainMenu.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/ballAndPins/platformTemp.png" type="Texture" id=5]
+[ext_resource path="res://Assets/title card.png" type="Texture" id=6]
 [ext_resource path="res://Assets/backgrounds/darkmoody/back1.png" type="Texture" id=7]
 [ext_resource path="res://Assets/backgrounds/darkmoody/back2.png" type="Texture" id=8]
 [ext_resource path="res://Assets/backgrounds/darkmoody/back3.png" type="Texture" id=9]
@@ -656,39 +657,38 @@ margin_right = 1004.0
 margin_bottom = 580.0
 custom_constants/separation = 70
 
+[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer"]
+position = Vector2( 499, 99 )
+texture = ExtResource( 6 )
+offset = Vector2( 0, 20 )
+
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 margin_right = 984.0
-margin_bottom = 74.0
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer"]
-margin_left = 20.0
-margin_top = 20.0
-margin_right = 964.0
-margin_bottom = 54.0
-text = "bowling bash"
-align = 1
+margin_bottom = 20.0
+custom_constants/margin_top = 0
+custom_constants/margin_left = 0
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
 margin_left = 232.0
-margin_top = 144.0
+margin_top = 90.0
 margin_right = 752.0
-margin_bottom = 399.0
+margin_bottom = 505.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/PanelContainer"]
 margin_right = 520.0
-margin_bottom = 255.0
+margin_bottom = 415.0
 custom_constants/margin_right = 60
-custom_constants/margin_top = 40
+custom_constants/margin_top = 200
 custom_constants/margin_left = 60
 custom_constants/margin_bottom = 40
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
 margin_left = 60.0
-margin_top = 40.0
+margin_top = 200.0
 margin_right = 460.0
-margin_bottom = 215.0
+margin_bottom = 375.0
 rect_min_size = Vector2( 400, 0 )
 custom_constants/separation = 25
 
