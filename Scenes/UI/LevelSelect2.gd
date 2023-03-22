@@ -8,17 +8,24 @@ onready var level2 = $MarginContainer/VBoxContainer/PanelContainer/MarginContain
 # var a = 2
 # var b = "text"
 
+onready var levels = [level1, level2]
+onready var num = 1
 
+func connect_levels(level, num):
+	var function = str("on_level", num, "_pressed")
+	print(function)
+	level.connect("pressed", self, function)
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	level1.connect("pressed", self, "on_play1_pressed")
-	level2.connect("pressed", self, "on_play2_pressed")
+	for level in levels:
+		connect_levels(level, num)
+		num += 1
 	$Node2D/Camera2D.apply_shake(1)
 
-func on_play1_pressed():
+func on_level1_pressed():
 	$"/root/LevelManager".change_level(0)
 
-func on_play2_pressed():
+func on_level2_pressed():
 	$"/root/LevelManager".change_level(1)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
