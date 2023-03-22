@@ -13,7 +13,6 @@ onready var num = 1
 
 func connect_levels(level, num):
 	var function = str("on_level", num, "_pressed")
-	print(function)
 	level.connect("pressed", self, function)
 # Called when the node enters the scene tree for the first time.
 func _ready():

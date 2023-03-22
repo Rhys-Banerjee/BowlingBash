@@ -498,15 +498,15 @@ custom_constants/margin_top = 0
 custom_constants/margin_left = 0
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
-margin_left = 69.0
+margin_left = 232.0
 margin_top = 90.0
-margin_right = 914.0
+margin_right = 752.0
 margin_bottom = 405.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/PanelContainer"]
-margin_right = 845.0
+margin_right = 520.0
 margin_bottom = 315.0
 custom_constants/margin_right = 60
 custom_constants/margin_top = 200
@@ -516,15 +516,17 @@ custom_constants/margin_bottom = 40
 [node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
 margin_left = 60.0
 margin_top = 200.0
-margin_right = 785.0
+margin_right = 460.0
 margin_bottom = 275.0
 rect_min_size = Vector2( 400, 0 )
 custom_constants/separation = 25
 
 [node name="Level1Button" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
+rect_min_size = Vector2( 75, 75 )
 rect_scale = Vector2( 1, 1 )
 text = "1"
 
 [node name="Level2Button" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
+rect_min_size = Vector2( 75, 75 )
 rect_scale = Vector2( 1, 1 )
 text = "2"
