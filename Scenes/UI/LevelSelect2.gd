@@ -3,12 +3,12 @@ extends CanvasLayer
 
 onready var level1 = $MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Level1Button 
 onready var level2 = $MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Level2Button 
-
+onready var level3 = $MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Level3Button 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
 
-onready var levels = [level1, level2]
+onready var levels = [level1, level2, level3]
 onready var num = 1
 
 func connect_levels(level, num):
@@ -26,6 +26,10 @@ func on_level1_pressed():
 
 func on_level2_pressed():
 	$"/root/LevelManager".change_level(1)
+	
+func on_level3_pressed():
+	$"/root/LevelManager".change_level(2)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
