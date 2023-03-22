@@ -97,7 +97,6 @@ func _physics_process(delta):
 	elif input_vector == Vector2.ZERO and Input.is_action_just_pressed("space"):
 		animationState.travel("jump")
 	elif input_vector == Vector2.ZERO and idleDeath:
-		print(idleDeath)
 		ballMovements.set("parameters/death/blend_position", input_vector)
 		animationState.travel("death")
 		idleDeath = false
