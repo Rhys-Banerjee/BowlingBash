@@ -1,9 +1,9 @@
 extends CanvasLayer
 
 
-onready var level1 = $MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Level1Button 
-onready var level2 = $MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Level2Button 
-onready var level3 = $MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/Level3Button 
+onready var level1 = $MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer/Level1Button
+onready var level2 = $MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer/Level2Button 
+onready var level3 = $MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer/Level3Button
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
