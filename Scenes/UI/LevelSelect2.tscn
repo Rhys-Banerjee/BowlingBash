@@ -487,26 +487,32 @@ theme = ExtResource( 1 )
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 1004.0
-margin_bottom = 776.0
+margin_bottom = 580.0
 custom_constants/separation = 70
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 margin_right = 984.0
-margin_bottom = 20.0
+margin_bottom = 54.0
 custom_constants/margin_top = 0
 custom_constants/margin_left = 0
 
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer"]
+margin_right = 964.0
+margin_bottom = 34.0
+text = "Level select"
+align = 1
+
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
-margin_left = 61.0
-margin_top = 90.0
-margin_right = 923.0
-margin_bottom = 446.0
+margin_left = 24.0
+margin_top = 124.0
+margin_right = 959.0
+margin_bottom = 516.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/PanelContainer"]
-margin_right = 862.0
-margin_bottom = 356.0
+margin_right = 935.0
+margin_bottom = 392.0
 custom_constants/margin_right = 60
 custom_constants/margin_top = 200
 custom_constants/margin_left = 60
@@ -515,72 +521,91 @@ custom_constants/margin_bottom = 40
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
 margin_left = 60.0
 margin_top = 200.0
-margin_right = 802.0
-margin_bottom = 316.0
+margin_right = 875.0
+margin_bottom = 352.0
+custom_constants/separation = 40
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer2"]
-margin_right = 742.0
+margin_right = 815.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 400, 0 )
-custom_constants/separation = 25
+custom_constants/separation = 40
 
 [node name="Level1Button" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer"]
 margin_right = 47.0
 margin_bottom = 56.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
 text = "1"
 
 [node name="Level2Button" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer"]
-margin_left = 72.0
-margin_right = 128.0
+margin_left = 87.0
+margin_right = 143.0
 margin_bottom = 56.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
 text = "2"
 
 [node name="Level3Button" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer"]
-margin_left = 153.0
-margin_right = 209.0
+margin_left = 183.0
+margin_right = 239.0
 margin_bottom = 56.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
 text = "3"
 
 [node name="Level4Button" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer"]
-margin_left = 234.0
-margin_right = 290.0
+margin_left = 279.0
+margin_right = 335.0
 margin_bottom = 56.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
 text = "4"
 
 [node name="Level5Button" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer"]
-margin_left = 315.0
-margin_right = 371.0
+margin_left = 375.0
+margin_right = 431.0
 margin_bottom = 56.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
 text = "5"
 
 [node name="Level6Button" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer"]
-margin_left = 396.0
-margin_right = 452.0
+margin_left = 471.0
+margin_right = 527.0
 margin_bottom = 56.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
 text = "6"
 
 [node name="Level7Button" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer"]
-margin_left = 477.0
-margin_right = 533.0
+margin_left = 567.0
+margin_right = 623.0
 margin_bottom = 56.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
 text = "7"
 
 [node name="Level8Button" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer"]
-margin_left = 558.0
-margin_right = 614.0
+margin_left = 663.0
+margin_right = 719.0
 margin_bottom = 56.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
 text = "8"
 
 [node name="Level9Button" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer"]
-margin_left = 639.0
-margin_right = 695.0
+margin_left = 759.0
+margin_right = 815.0
 margin_bottom = 56.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
 text = "9"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer2"]
-margin_top = 60.0
-margin_right = 742.0
-margin_bottom = 116.0
+margin_top = 96.0
+margin_right = 815.0
+margin_bottom = 152.0
 rect_min_size = Vector2( 400, 0 )
 custom_constants/separation = 25
 
@@ -630,15 +655,3 @@ margin_left = 670.0
 margin_right = 742.0
 margin_bottom = 56.0
 text = "17"
-
-[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
-margin_left = 432.0
-margin_top = 516.0
-margin_right = 552.0
-margin_bottom = 756.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-custom_constants/margin_right = 60
-custom_constants/margin_top = 200
-custom_constants/margin_left = 60
-custom_constants/margin_bottom = 40
