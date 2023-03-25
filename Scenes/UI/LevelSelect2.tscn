@@ -73,14 +73,8 @@ margin_right = 1004.0
 margin_bottom = 580.0
 custom_constants/separation = 70
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 margin_right = 984.0
-margin_bottom = 54.0
-custom_constants/margin_top = 0
-custom_constants/margin_left = 0
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer"]
-margin_right = 964.0
 margin_bottom = 34.0
 rect_min_size = Vector2( 1, 1 )
 text = "Level select"
@@ -88,15 +82,15 @@ align = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
 margin_left = 24.0
-margin_top = 124.0
+margin_top = 104.0
 margin_right = 959.0
-margin_bottom = 516.0
+margin_bottom = 496.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/PanelContainer"]
 margin_right = 935.0
-margin_bottom = 100.0
+margin_bottom = 392.0
 custom_constants/margin_right = 60
 custom_constants/margin_top = 200
 custom_constants/margin_left = 60
