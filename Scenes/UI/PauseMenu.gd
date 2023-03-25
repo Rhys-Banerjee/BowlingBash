@@ -38,8 +38,9 @@ func on_continue_pressed():
 func on_options_pressed():
 	pass
 	
-func on_quit_pressed():
-	pass
+func on_exit_pressed():
+	$"/root/LevelManager".change_level(0)
+	unpause()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
