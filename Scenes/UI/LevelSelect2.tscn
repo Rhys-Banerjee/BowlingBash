@@ -145,6 +145,7 @@ size_flags_vertical = 2
 text = "4"
 
 [node name="Level5Button" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer2/HBoxContainer"]
+modulate = Color( 0.133333, 1, 0, 1 )
 margin_left = 375.0
 margin_right = 431.0
 margin_bottom = 56.0
@@ -153,6 +154,7 @@ size_flags_vertical = 2
 text = "5"
 
 [node name="Level6Button" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer2/HBoxContainer"]
+modulate = Color( 0.133333, 1, 0, 1 )
 margin_left = 471.0
 margin_right = 527.0
 margin_bottom = 56.0
@@ -161,6 +163,7 @@ size_flags_vertical = 2
 text = "6"
 
 [node name="Level7Button" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer2/HBoxContainer"]
+modulate = Color( 0.133333, 1, 0, 1 )
 margin_left = 567.0
 margin_right = 623.0
 margin_bottom = 56.0
@@ -169,6 +172,7 @@ size_flags_vertical = 2
 text = "7"
 
 [node name="Level8Button" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer2/HBoxContainer"]
+modulate = Color( 0.133333, 1, 0, 1 )
 margin_left = 663.0
 margin_right = 719.0
 margin_bottom = 56.0
