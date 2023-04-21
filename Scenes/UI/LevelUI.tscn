@@ -114,6 +114,19 @@ size_flags_horizontal = 4
 custom_fonts/font = ExtResource( 3 )
 text = "10 seconds"
 
+[node name="MarginContainer3" type="MarginContainer" parent="HBoxContainer"]
+margin_left = 690.0
+margin_right = 856.0
+margin_bottom = 111.0
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer3"]
+margin_top = 38.0
+margin_right = 166.0
+margin_bottom = 72.0
+theme = ExtResource( 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "Level X"
+
 [node name="Popups" type="MarginContainer" parent="."]
 theme = ExtResource( 1 )
 custom_constants/margin_right = 500

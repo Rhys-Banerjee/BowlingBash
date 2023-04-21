@@ -5,7 +5,10 @@
 
 [node name="BaseLevel2" instance=ExtResource( 1 )]
 
-[node name="LevelTimer" parent="." index="0"]
+[node name="LevelNumber" parent="." index="0"]
+wait_time = 17.0
+
+[node name="LevelTimer" parent="." index="1"]
 wait_time = 20.0
 
 [node name="Sprite" parent="ParallaxBackground/backdrop" index="0"]
@@ -40,5 +43,5 @@ position = Vector2( 1255.98, 666.322 )
 [node name="pin7" parent="pins" index="6" instance=ExtResource( 2 )]
 position = Vector2( 1262, 831.165 )
 
-[node name="ball" parent="." index="7"]
+[node name="ball" parent="." index="8"]
 position = Vector2( 586.792, 256.201 )

@@ -579,6 +579,8 @@ scale = Vector2( 0.995242, 1.00702 )
 script = ExtResource( 5 )
 levelCompleteScene = ExtResource( 10 )
 
+[node name="LevelNumber" type="Timer" parent="."]
+
 [node name="LevelTimer" type="Timer" parent="."]
 wait_time = 10.0
 autostart = true

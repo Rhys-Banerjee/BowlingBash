@@ -25,5 +25,8 @@ func round_up(f):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var timer = get_parent().get_node("LevelTimer")
+	var levelNum = get_parent().get_node("LevelNumber")
 	$HBoxContainer/MarginContainer2/Label.text = str(round_up(timer.time_left), " seconds")
+	$HBoxContainer/MarginContainer3/Label.text = str("LEVEL ", int(levelNum.wait_time))
+	
 
