@@ -18,12 +18,13 @@ onready var level14 = $MarginContainer/VBoxContainer/PanelContainer/VBoxContaine
 onready var level15 = $MarginContainer/VBoxContainer/PanelContainer/VBoxContainer2/HBoxContainer2/Level15Button
 onready var level16 = $MarginContainer/VBoxContainer/PanelContainer/VBoxContainer2/HBoxContainer2/Level16Button
 onready var level17 = $MarginContainer/VBoxContainer/PanelContainer/VBoxContainer2/HBoxContainer2/Level17Button
+onready var level18 = $MarginContainer/VBoxContainer/PanelContainer/VBoxContainer2/HBoxContainer2/Level18Button
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
 
 onready var levels = [level1, level2, level3, level4, level5, level6, level7, level8, level9, level10,
-level11, level12, level13, level14, level15, level16, level17]
+level11, level12, level13, level14, level15, level16, level17, level18]
 onready var num = 1
 
 func connect_levels(level, num):
@@ -90,6 +91,9 @@ func on_level16_pressed():
 
 func on_level17_pressed():
 	$"/root/LevelManager".change_level(17)
+	
+func on_level18_pressed():
+	$"/root/LevelManager".change_level(18)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
