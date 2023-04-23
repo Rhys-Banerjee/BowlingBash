@@ -204,18 +204,21 @@ margin_bottom = 56.0
 text = "12"
 
 [node name="Level13Button" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer2/HBoxContainer2"]
+modulate = Color( 0, 1, 0.678431, 1 )
 margin_left = 282.0
 margin_right = 354.0
 margin_bottom = 56.0
 text = "13"
 
 [node name="Level14Button" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer2/HBoxContainer2"]
+modulate = Color( 0, 1, 0.678431, 1 )
 margin_left = 379.0
 margin_right = 451.0
 margin_bottom = 56.0
 text = "14"
 
 [node name="Level15Button" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer2/HBoxContainer2"]
+modulate = Color( 0, 1, 0.678431, 1 )
 margin_left = 476.0
 margin_right = 548.0
 margin_bottom = 56.0
@@ -240,7 +243,7 @@ margin_bottom = 56.0
 text = "18"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer2"]
-margin_left = 708.0
+margin_left = 604.0
 margin_top = 192.0
 margin_right = 839.0
 margin_bottom = 248.0
@@ -248,10 +251,10 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer2/HBoxContainer3"]
-margin_right = 131.0
+margin_right = 235.0
 margin_bottom = 56.0
 
 [node name="TitleScreen" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer2/HBoxContainer3/HBoxContainer"]
-margin_right = 131.0
+margin_right = 235.0
 margin_bottom = 56.0
-text = "Back"
+text = "Main Menu"
