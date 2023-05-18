@@ -107,6 +107,11 @@ func _physics_process(delta):
 			animationState.travel("Idle")
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	velocity = move_and_slide(velocity)
+	var currentSpeed = velocity.length()
+	if currentSpeed >= (MAX_SPEED - 200):
+		$SpeedParticles.emitting = true
+	else:
+		$SpeedParticles.emitting = false
 		#if collision.collider.is_in_group("platforms"):
 		#	print("")
 		

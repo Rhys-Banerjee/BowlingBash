@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://Assets/ballAndPins/ballTemp.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/ball.gd" type="Script" id=2]
@@ -6,6 +6,33 @@
 [ext_resource path="res://Assets/ballSpriteAnimation/ballMoveSprite3.png" type="Texture" id=4]
 [ext_resource path="res://Assets/ballSpriteAnimation/ballMoveSprite2.png" type="Texture" id=5]
 [ext_resource path="res://Assets/ballSpriteAnimation/ballMoveSprite1.png" type="Texture" id=6]
+
+[sub_resource type="Shader" id=48]
+code = "shader_type canvas_item;
+
+void fragment() {
+	vec4 texColor = texture(TEXTURE, UV);
+	texColor.a *= 0.3;
+	COLOR = texColor;
+	//COLOR.rgba = vec4(1.0, 1.0, 1.0, texColor.a);
+}"
+
+[sub_resource type="ShaderMaterial" id=49]
+shader = SubResource( 48 )
+
+[sub_resource type="Curve" id=50]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.145109, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=51]
+curve = SubResource( 50 )
+
+[sub_resource type="ParticlesMaterial" id=47]
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 1.76
+scale_curve = SubResource( 51 )
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 100.286
@@ -408,6 +435,16 @@ tracks/0/keys = {
 [node name="ball" type="KinematicBody2D" groups=["player"]]
 scale = Vector2( 0.309266, 0.319077 )
 script = ExtResource( 2 )
+
+[node name="SpeedParticles" type="Particles2D" parent="."]
+show_behind_parent = true
+material = SubResource( 49 )
+scale = Vector2( 5, 5 )
+amount = 15
+lifetime = 0.4
+local_coords = false
+process_material = SubResource( 47 )
+texture = ExtResource( 4 )
 
 [node name="pinHitbox" type="Area2D" parent="."]
 visible = false
