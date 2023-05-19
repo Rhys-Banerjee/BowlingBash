@@ -13,7 +13,7 @@ func _ready():
 		baseLevels[0].connect("pin_total_changed", self, "on_pin_total_changed")
 
 func on_pin_total_changed(totalPins, collectedPins):
-	$HBoxContainer/MarginContainer/Label.text = str(totalPins-collectedPins, " PINS LEFT")
+	$HBoxContainer/MarginContainer/HBoxContainer/Label.text = str(" x ", totalPins-collectedPins)
 	$Popups/Label.text = str(totalPins-collectedPins)
 	if collectedPins == 0:
 		$Popups/Label.text = str("GO!")
@@ -26,7 +26,7 @@ func round_up(f):
 func _process(delta):
 	var timer = get_parent().get_node("LevelTimer")
 	var levelNum = get_parent().get_node("LevelNumber")
-	$HBoxContainer/MarginContainer2/Label.text = str(round_up(timer.time_left), " seconds")
+	$HBoxContainer/MarginContainer2/HBoxContainer/Label.text = str(" x ", round_up(timer.time_left))
 	$HBoxContainer/MarginContainer3/Label.text = str("LEVEL ", int(levelNum.wait_time))
 	
 
