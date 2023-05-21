@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://resources/theme.tres" type="Theme" id=1]
+[ext_resource path="res://Scenes/util/RangeControl.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Audio/sound/click.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Audio/sound/click2.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Audio/sound/click3.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Audio/sound/click4.wav" type="AudioStream" id=6]
+[ext_resource path="res://Scenes/util/RandomAudioStreamPlayer.tscn" type="PackedScene" id=7]
+
+[node name="RangeControl" type="MarginContainer"]
+margin_left = 245.0
+margin_right = 467.0
+margin_bottom = 99.0
+rect_min_size = Vector2( 222, 99 )
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="ButtonClicker" parent="." instance=ExtResource( 7 )]
+pause_mode = 2
+numberToPlay = 3
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ButtonClicker"]
+stream = ExtResource( 4 )
+bus = "SFX"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="ButtonClicker"]
+stream = ExtResource( 5 )
+bus = "SFX"
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="ButtonClicker"]
+stream = ExtResource( 6 )
+bus = "SFX"
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="ButtonClicker"]
+stream = ExtResource( 3 )
+bus = "SFX"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 202.0
+margin_bottom = 79.0
+rect_min_size = Vector2( 182, 59 )
+custom_constants/separation = 20
+
+[node name="SubtractButton" type="Button" parent="HBoxContainer"]
+margin_right = 54.0
+margin_bottom = 59.0
+text = "-"
+
+[node name="num" type="Label" parent="HBoxContainer"]
+margin_left = 74.0
+margin_top = 11.0
+margin_right = 108.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 34, 34 )
+text = "1"
+align = 1
+
+[node name="PlusButton" type="Button" parent="HBoxContainer"]
+margin_left = 128.0
+margin_right = 182.0
+margin_bottom = 59.0
+text = "+"

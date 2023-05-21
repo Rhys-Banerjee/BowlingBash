@@ -443,7 +443,7 @@ script = ExtResource( 2 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="rollAudio"]
 stream = ExtResource( 7 )
-bus = "SFX"
+bus = "Roll"
 
 [node name="jumpAudio" parent="." instance=ExtResource( 9 )]
 numberToPlay = 1

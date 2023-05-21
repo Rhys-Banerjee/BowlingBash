@@ -98,27 +98,27 @@ script = ExtResource( 3 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="HitAudioPlayer"]
 stream = ExtResource( 11 )
-bus = "SFX"
+bus = "PinHit"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="HitAudioPlayer"]
 stream = ExtResource( 12 )
-bus = "SFX"
+bus = "PinHit"
 
 [node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="HitAudioPlayer"]
 stream = ExtResource( 10 )
-bus = "SFX"
+bus = "PinHit"
 
 [node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="HitAudioPlayer"]
 stream = ExtResource( 9 )
-bus = "SFX"
+bus = "PinHit"
 
 [node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="HitAudioPlayer"]
 stream = ExtResource( 8 )
-bus = "SFX"
+bus = "PinHit"
 
 [node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="HitAudioPlayer"]
 stream = ExtResource( 13 )
-bus = "SFX"
+bus = "PinHit"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 visible = false

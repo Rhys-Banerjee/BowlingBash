@@ -2,6 +2,7 @@ extends CanvasLayer
 
 signal timeRanOut
 
+var optionsMenuScene = preload("res://scenes/UI/Options.tscn")
 onready var continueButton = $MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PlayButton
 onready var restartButton = $MarginContainer/PanelContainer/MarginContainer/VBoxContainer/RestartButton
 onready var exitButton = $MarginContainer/PanelContainer/MarginContainer/VBoxContainer/LevelSelect
@@ -36,8 +37,16 @@ func on_continue_pressed():
 	unpause()
 
 func on_options_pressed():
-	pass
+	var optionsMenuInstance = optionsMenuScene.instance()
+	add_child(optionsMenuInstance)
+	optionsMenuInstance.connect("back_pressed", self, "on_options_back_pressed")
+	$MarginContainer.visible = false
 	
+func on_options_back_pressed():
+	$Options.queue_free()
+	$MarginContainer.visible = true
+	
+
 func on_exit_pressed():
 	$"/root/LevelManager".change_level(0)
 	unpause()
