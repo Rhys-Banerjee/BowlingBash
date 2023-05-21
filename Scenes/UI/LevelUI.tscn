@@ -120,6 +120,7 @@ theme = ExtResource( 1 )
 position = Vector2( 46, 55 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 4 )
+frame = 2
 playing = true
 
 [node name="Label" type="Label" parent="HBoxContainer/MarginContainer2/HBoxContainer"]
@@ -159,7 +160,6 @@ margin_bottom = 71.0
 position = Vector2( 15, 30 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 3 )
-frame = 1
 playing = true
 
 [node name="Label" type="Label" parent="HBoxContainer/MarginContainer/HBoxContainer"]
