@@ -108,6 +108,10 @@ func _physics_process(delta):
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	velocity = move_and_slide(velocity)
 	var currentSpeed = velocity.length()
+	if currentSpeed > 0:
+		$rollAudio.play()
+	elif currentSpeed == 0:
+		$rollAudio.stop()
 	if currentSpeed >= (MAX_SPEED - 200):
 		$SpeedParticles.emitting = true
 	else:
@@ -125,6 +129,7 @@ func _on_jump_timer_timeout() -> void:
 		#emit_signal("died")
 func stuff():
 	#$"/root/Helpers".apply_camera_shake(1)
+	$jumpAudio.play()
 	ballAnimations.play("jump")
 	inAir()
 func inAir():

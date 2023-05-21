@@ -10,6 +10,7 @@ extends CanvasLayer
 func _ready():
 	var baseLevels = get_tree().get_nodes_in_group("base_level")
 	if (baseLevels.size() > 0):
+		$goAudio.play()
 		$Popups/Label.text = str("GO!")
 		$Popups/Label/AnimationPlayer.play("pinCollected")
 		baseLevels[0].connect("pin_total_changed", self, "on_pin_total_changed")

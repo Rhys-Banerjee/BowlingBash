@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://resources/theme.tres" type="Theme" id=1]
 [ext_resource path="res://Scenes/UI/LevelUI.gd" type="Script" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Assets/pinSpriteAnimations/timerSprites/TimerSprite3.png" type="Texture" id=7]
 [ext_resource path="res://Assets/pinSpriteAnimations/timerSprites/TimerSprite4.png" type="Texture" id=8]
 [ext_resource path="res://Assets/pinSpriteAnimations/timerSprites/TimerSprite1.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Audio/sound/go!.wav" type="AudioStream" id=10]
+[ext_resource path="res://Scenes/util/RandomAudioStreamPlayer.tscn" type="PackedScene" id=11]
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
@@ -96,6 +98,12 @@ tracks/3/keys = {
 [node name="LevelUI" type="CanvasLayer"]
 script = ExtResource( 2 )
 
+[node name="goAudio" parent="." instance=ExtResource( 11 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="goAudio"]
+stream = ExtResource( 10 )
+bus = "SFX"
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchor_right = 1.0
 margin_bottom = 111.0
@@ -120,7 +128,7 @@ theme = ExtResource( 1 )
 position = Vector2( 46, 55 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 4 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="Label" type="Label" parent="HBoxContainer/MarginContainer2/HBoxContainer"]

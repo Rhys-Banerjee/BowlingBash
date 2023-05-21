@@ -11,6 +11,7 @@ func _ready():
 func on_area_entered(area2d):
 	#$AnimatedSprite.play("knocked")
 	#$"/root/Helpers".apply_camera_shake(1)
+	$HitAudioPlayer.play()
 	$pinAnimations.play("Knocked")
 	#$AnimationPlayer.play("knocked")
 	#var target = get_node("./ball").position.angle_to_point(position)

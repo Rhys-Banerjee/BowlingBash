@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Hopeful Tokyo night pop free music ｜｜ Copyright free ｜｜ no copyright music.wav-b9ab3538f8308d1da905366f2b9269a8.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/music/Hopeful Tokyo night pop free music ｜｜ Copyright free ｜｜ no copyright music.wav"
+dest_files=[ "res://.import/Hopeful Tokyo night pop free music ｜｜ Copyright free ｜｜ no copyright music.wav-b9ab3538f8308d1da905366f2b9269a8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

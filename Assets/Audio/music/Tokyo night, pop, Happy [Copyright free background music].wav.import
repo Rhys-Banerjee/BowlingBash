@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Tokyo night, pop, Happy [Copyright free background music].wav-8ae2397315663ededc194cb23ab08c78.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/music/Tokyo night, pop, Happy [Copyright free background music].wav"
+dest_files=[ "res://.import/Tokyo night, pop, Happy [Copyright free background music].wav-8ae2397315663ededc194cb23ab08c78.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

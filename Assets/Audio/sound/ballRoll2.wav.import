@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ballRoll2.wav-2bd46ac37b0d21f582abba42a12138be.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/sound/ballRoll2.wav"
+dest_files=[ "res://.import/ballRoll2.wav-2bd46ac37b0d21f582abba42a12138be.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

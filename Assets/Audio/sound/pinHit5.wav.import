@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/pinHit5.wav-07131af77bcfdaf9d1c58565f793ba3e.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/sound/pinHit5.wav"
+dest_files=[ "res://.import/pinHit5.wav-07131af77bcfdaf9d1c58565f793ba3e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

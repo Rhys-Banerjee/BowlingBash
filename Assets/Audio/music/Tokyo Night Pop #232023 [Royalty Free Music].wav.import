@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Tokyo Night Pop #232023 [Royalty Free Music].wav-0b568c6aaa1f3841b897abcd121d59c0.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/music/Tokyo Night Pop #232023 [Royalty Free Music].wav"
+dest_files=[ "res://.import/Tokyo Night Pop #232023 [Royalty Free Music].wav-0b568c6aaa1f3841b897abcd121d59c0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
