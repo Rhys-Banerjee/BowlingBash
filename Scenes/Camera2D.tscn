@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Camera2D.gd" type="Script" id=1]
 
@@ -11,9 +11,37 @@ octaves = 9
 period = 117.5
 persistence = 0.819
 
+[sub_resource type="Shader" id=3]
+code = "shader_type canvas_item;
+
+uniform sampler2D offset_image : hint_white;
+uniform float strength = 0.25;
+
+void fragment() {
+	vec4 output = texture(SCREEN_TEXTURE, SCREEN_UV);
+	
+	float shift = strength * texture(offset_image, SCREEN_UV).r / 100.0;
+	output.r = texture(SCREEN_TEXTURE, vec2(SCREEN_UV.x + shift, SCREEN_UV.y)).r;
+	output.g = texture(SCREEN_TEXTURE, SCREEN_UV).g;
+	output.b = texture(SCREEN_TEXTURE, vec2(SCREEN_UV.x - shift, SCREEN_UV.y)).b;
+	
+	COLOR = output;
+}"
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = SubResource( 3 )
+shader_param/strength = 0.25
+
 [node name="Camera2D" type="Camera2D" groups=["camera"]]
 current = true
 script = ExtResource( 1 )
 backgroundColor = Color( 1, 1, 1, 1 )
 shakeNoise = SubResource( 1 )
 eventShakeNoise = SubResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource( 4 )
+anchor_right = 1.0
+anchor_bottom = 1.0
