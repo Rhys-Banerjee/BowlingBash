@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://resources/theme.tres" type="Theme" id=1]
 [ext_resource path="res://Scenes/util/RangeControl.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/Audio/sound/click3.wav" type="AudioStream" id=5]
 [ext_resource path="res://Assets/Audio/sound/click4.wav" type="AudioStream" id=6]
 [ext_resource path="res://Scenes/util/RandomAudioStreamPlayer.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/UI/AnimatedButton.tscn" type="PackedScene" id=8]
 
 [node name="RangeControl" type="MarginContainer"]
 margin_left = 245.0
@@ -44,10 +45,12 @@ margin_bottom = 79.0
 rect_min_size = Vector2( 182, 59 )
 custom_constants/separation = 20
 
-[node name="SubtractButton" type="Button" parent="HBoxContainer"]
-margin_right = 54.0
-margin_bottom = 59.0
+[node name="SubtractButton" parent="HBoxContainer" instance=ExtResource( 8 )]
+rect_min_size = Vector2( 54, 59 )
+rect_scale = Vector2( 1, 1 )
+rect_pivot_offset = Vector2( 25, 25 )
 text = "-"
+disableHoverAnim = true
 
 [node name="num" type="Label" parent="HBoxContainer"]
 margin_left = 74.0
@@ -55,11 +58,11 @@ margin_top = 11.0
 margin_right = 108.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 34, 34 )
-text = "1"
 align = 1
 
-[node name="PlusButton" type="Button" parent="HBoxContainer"]
-margin_left = 128.0
-margin_right = 182.0
-margin_bottom = 59.0
+[node name="PlusButton" parent="HBoxContainer" instance=ExtResource( 8 )]
+rect_min_size = Vector2( 54, 59 )
+rect_scale = Vector2( 1, 1 )
+rect_pivot_offset = Vector2( 25, 25 )
 text = "+"
+disableHoverAnim = true

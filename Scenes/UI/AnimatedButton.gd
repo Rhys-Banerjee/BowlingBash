@@ -5,6 +5,7 @@ extends Button
 # var a = 2
 # var b = "text"
 
+export (bool) var disableHoverAnim
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,9 +14,11 @@ func _ready():
 	connect("pressed", self, "on_button_pressed")
 	
 func on_mouse_entered():
-	$AnimationPlayer.play("hover")
+	if (!disableHoverAnim):
+		$AnimationPlayer.play("hover")
 func on_mouse_exited():
-	$AnimationPlayer.play_backwards("hover")
+	if (!disableHoverAnim):
+		$AnimationPlayer.play_backwards("hover")
 func on_button_pressed():
 	$AnimationPlayer.play("click2")
 	
