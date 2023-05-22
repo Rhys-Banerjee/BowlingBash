@@ -19,6 +19,7 @@ config/icon="res://icon.png"
 LevelManager="*res://Scenes/LevelManager.tscn"
 Helpers="*res://scripts/helpers.gd"
 MusicPlayer="*res://Scenes/util/MusicPlayer.tscn"
+ClickSoundPlayer="*res://Scenes/util/ClickSoundPlayer.tscn"
 
 [display]
 

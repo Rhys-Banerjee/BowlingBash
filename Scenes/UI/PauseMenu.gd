@@ -21,6 +21,7 @@ func _ready():
 	get_tree().paused = true
 
 func unpause():
+	$"/root/ClickSoundPlayer/Clicks".play()
 	queue_free()
 	get_tree().paused = false
 
@@ -30,6 +31,7 @@ func _unhandled_input(event):
 		get_tree().set_input_as_handled()
 
 func on_restart_pressed():
+	$"/root/ClickSoundPlayer/Clicks".play()
 	unpause()
 	get_parent().get_tree().reload_current_scene()
 
@@ -37,17 +39,20 @@ func on_continue_pressed():
 	unpause()
 
 func on_options_pressed():
+	$"/root/ClickSoundPlayer/Clicks".play()
 	var optionsMenuInstance = optionsMenuScene.instance()
 	add_child(optionsMenuInstance)
 	optionsMenuInstance.connect("back_pressed", self, "on_options_back_pressed")
 	$MarginContainer.visible = false
 	
 func on_options_back_pressed():
+	$"/root/ClickSoundPlayer/Clicks".play()
 	$Options.queue_free()
 	$MarginContainer.visible = true
 	
 
 func on_exit_pressed():
+	$"/root/ClickSoundPlayer/Clicks".play()
 	$"/root/LevelManager".change_level(0)
 	unpause()
 
