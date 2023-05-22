@@ -29,7 +29,7 @@ func round_up(f):
 func _process(delta):
 	var timer = get_parent().get_node("LevelTimer")
 	var levelNum = get_parent().get_node("LevelNumber")
-	$HBoxContainer/MarginContainer2/HBoxContainer/Label.text = str(" x ", round_up(timer.time_left))
+	$HBoxContainer/MarginContainer2/HBoxContainer/Label.text = str(" x ", (stepify(timer.time_left, 0.1)))
 	$HBoxContainer/MarginContainer3/Label.text = str("LEVEL ", int(levelNum.wait_time))
 	
 
