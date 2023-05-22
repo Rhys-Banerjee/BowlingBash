@@ -193,13 +193,11 @@ rect_min_size = Vector2( 400, 0 )
 custom_constants/separation = 25
 
 [node name="Level10Button" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer2/HBoxContainer2"]
-modulate = Color( 1, 0.678431, 0, 1 )
 margin_right = 65.0
 margin_bottom = 59.0
 text = "10"
 
 [node name="Level11Button" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer2/HBoxContainer2"]
-modulate = Color( 1, 0.678431, 0, 1 )
 margin_left = 90.0
 margin_right = 155.0
 margin_bottom = 59.0
@@ -207,49 +205,48 @@ rect_min_size = Vector2( 65, 0 )
 text = "11"
 
 [node name="Level12Button" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer2/HBoxContainer2"]
-modulate = Color( 1, 0.678431, 0, 1 )
 margin_left = 180.0
 margin_right = 245.0
 margin_bottom = 59.0
 text = "12"
 
 [node name="Level13Button" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer2/HBoxContainer2"]
-modulate = Color( 0, 1, 0.678431, 1 )
+modulate = Color( 0.133333, 1, 0, 1 )
 margin_left = 270.0
 margin_right = 335.0
 margin_bottom = 59.0
 text = "13"
 
 [node name="Level14Button" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer2/HBoxContainer2"]
-modulate = Color( 0, 1, 0.678431, 1 )
+modulate = Color( 0.133333, 1, 0, 1 )
 margin_left = 360.0
 margin_right = 425.0
 margin_bottom = 59.0
 text = "14"
 
 [node name="Level15Button" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer2/HBoxContainer2"]
-modulate = Color( 0, 1, 0.678431, 1 )
+modulate = Color( 0.133333, 1, 0, 1 )
 margin_left = 450.0
 margin_right = 515.0
 margin_bottom = 59.0
 text = "15"
 
 [node name="Level16Button" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer2/HBoxContainer2"]
-modulate = Color( 0.717647, 0, 1, 1 )
+modulate = Color( 0, 0.811765, 1, 1 )
 margin_left = 540.0
 margin_right = 605.0
 margin_bottom = 59.0
 text = "16"
 
 [node name="Level17Button" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer2/HBoxContainer2"]
-modulate = Color( 0.717647, 0, 1, 1 )
+modulate = Color( 0, 0.811765, 1, 1 )
 margin_left = 630.0
 margin_right = 695.0
 margin_bottom = 59.0
 text = "17"
 
 [node name="Level18Button" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer2/HBoxContainer2"]
-modulate = Color( 0.717647, 0, 1, 1 )
+modulate = Color( 0, 0.811765, 1, 1 )
 margin_left = 720.0
 margin_right = 785.0
 margin_bottom = 59.0

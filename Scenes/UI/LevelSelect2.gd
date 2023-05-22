@@ -39,60 +39,79 @@ func _ready():
 	$Node2D/Camera2D.apply_shake(1)
 
 func on_back_pressed():
-	$"/root/LevelManager".change_level(19)
+	$"/root/ClickSoundPlayer/Clicks".play()
+	get_tree().change_scene("res://Scenes/UI/MainMenu.tscn")
 
 func on_level1_pressed():
+	$"/root/ClickSoundPlayer/Clicks".play()
 	$"/root/LevelManager".change_level(1)
 
 func on_level2_pressed():
+	$"/root/ClickSoundPlayer/Clicks".play()
 	$"/root/LevelManager".change_level(2)
 	
 func on_level3_pressed():
+	$"/root/ClickSoundPlayer/Clicks".play()
 	$"/root/LevelManager".change_level(3)
 
 func on_level4_pressed():
+	$"/root/ClickSoundPlayer/Clicks".play()
 	$"/root/LevelManager".change_level(4)
 	
 func on_level5_pressed():
+	$"/root/ClickSoundPlayer/Clicks".play()
 	$"/root/LevelManager".change_level(5)
 
 func on_level6_pressed():
+	$"/root/ClickSoundPlayer/Clicks".play()
 	$"/root/LevelManager".change_level(6)
 
 func on_level7_pressed():
+	$"/root/ClickSoundPlayer/Clicks".play()
 	$"/root/LevelManager".change_level(7)
 
 func on_level8_pressed():
+	$"/root/ClickSoundPlayer/Clicks".play()
 	$"/root/LevelManager".change_level(8)
 
 func on_level9_pressed():
+	$"/root/ClickSoundPlayer/Clicks".play()
 	$"/root/LevelManager".change_level(9)
 
 func on_level10_pressed():
+	$"/root/ClickSoundPlayer/Clicks".play()
 	$"/root/LevelManager".change_level(10)
 
 func on_level11_pressed():
+	$"/root/ClickSoundPlayer/Clicks".play()
 	$"/root/LevelManager".change_level(11)
 
 func on_level12_pressed():
+	$"/root/ClickSoundPlayer/Clicks".play()
 	$"/root/LevelManager".change_level(12)
 
 func on_level13_pressed():
+	$"/root/ClickSoundPlayer/Clicks".play()
 	$"/root/LevelManager".change_level(13)
 
 func on_level14_pressed():
+	$"/root/ClickSoundPlayer/Clicks".play()
 	$"/root/LevelManager".change_level(14)
 
 func on_level15_pressed():
+	$"/root/ClickSoundPlayer/Clicks".play()
 	$"/root/LevelManager".change_level(15)
 
 func on_level16_pressed():
+	$"/root/ClickSoundPlayer/Clicks".play()
 	$"/root/LevelManager".change_level(16)
 
 func on_level17_pressed():
+	$"/root/ClickSoundPlayer/Clicks".play()
 	$"/root/LevelManager".change_level(17)
 	
 func on_level18_pressed():
+	$"/root/ClickSoundPlayer/Clicks".play()
 	$"/root/LevelManager".change_level(18)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
