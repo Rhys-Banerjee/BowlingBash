@@ -16,8 +16,9 @@ func _ready():
 	$Node2D/Camera2D.apply_shake(1)
 
 func on_play_pressed():
-	$"/root/ClickSoundPlayer/Clicks".play()
 	$"/root/LevelManager".change_level(0)
+	$"/root/ClickSoundPlayer/Clicks".play()
+	
 
 func on_option_pressed():
 	$"/root/ClickSoundPlayer/Clicks".play()
